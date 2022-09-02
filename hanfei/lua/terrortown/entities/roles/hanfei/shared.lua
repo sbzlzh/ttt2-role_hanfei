@@ -20,13 +20,16 @@ function ROLE:PreInitialize()
 		traitorButton = 1
 	}
 end
+
 function ROLE:Initialize()
 	roles.SetBaseRole(self, ROLE_TRAITOR)
 end
 
-CreateConVar("ttt_hanfei_hp", 150, {FCVAR_NOTIFY, FCVAR_ARCHIVE})
-CreateConVar("ttt_hanfei_armor", 100, {FCVAR_NOTIFY, FCVAR_ARCHIVE})
-CreateConVar("ttt_hanfei_exposetime", 60, {FCVAR_NOTIFY, FCVAR_ARCHIVE})
+if SERVER then
+    CreateConVar("ttt_hanfei_hp", 150, {FCVAR_NOTIFY, FCVAR_ARCHIVE})
+    CreateConVar("ttt_hanfei_armor", 100, {FCVAR_NOTIFY, FCVAR_ARCHIVE})
+	CreateConVar("ttt_hanfei_exposetime", 60, {FCVAR_NOTIFY, FCVAR_ARCHIVE})
+end
 
 hook.Add("TTTUlxDynamicRCVars", "TTTUlxDynamicGAIYACVars", function(tbl)
 	tbl[ROLE_HANFEI] = tbl[ROLE_HANFEI] or {}
@@ -111,7 +114,7 @@ if SERVER then
 				end
 			end
 			if flag then
-				info=info .."ttt2_shinigami_revive"
+				info=info .."是本局悍匪，大家一起干翻他！"
 				net.Start("hanfei_expose")
 				net.WriteString(info)
 				net.Broadcast()
@@ -128,4 +131,3 @@ if CLIENT then
         chat.AddText( Color( 255, 0, 0 ),info)
 	end)
 end
-
