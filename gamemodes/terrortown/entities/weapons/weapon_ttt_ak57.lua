@@ -1,4 +1,24 @@
-AddCSLuaFile()
+if SERVER then
+	AddCSLuaFile()
+	resource.AddFile("models/weapons/v_irq_ak47.mdl")
+	resource.AddFile("models/weapons/w_irq_ak47.mdl")
+	resource.AddFile("sound/weapons/gunshot_irq_ak47/ak47_boltpull.wav")
+	resource.AddFile("sound/weapons/gunshot_irq_ak47/ak47_boltrelease.wav")
+	resource.AddFile("sound/weapons/gunshot_irq_ak47/ak47_clipin.mdl")
+	resource.AddFile("sound/weapons/gunshot_irq_ak47/ak47_clipout.mdl")
+	resource.AddFile("sound/weapons/gunshot_irq_ak47/ak47-1.mdl")
+	resource.AddFile("materials/shellz/ak.vmt")
+	resource.AddFile("materials/models/shellz/ak.vmt")
+	resource.AddFile("materials/models/weapons/v_models/thanez_ak/magazine.vmt")
+	resource.AddFile("materials/models/weapons/v_models/thanez_ak/receiver.vmt")
+	resource.AddFile("materials/models/weapons/v_models/thanez_ak/upper.vmt")
+	resource.AddFile("materials/models/weapons/w_models/thanez_ak/magazine.vmt")
+	resource.AddFile("materials/models/weapons/w_models/thanez_ak/receiver.vmt")
+	resource.AddFile("materials/models/weapons/w_models/thanez_ak/upper.vmt")
+	resource.AddFile("materials/vgui/entities/pspak_irq_ak47.vmt")
+	resource.AddFile("materials/vgui/hud/pspak_irq_ak47.vmt")
+	resource.AddFile("materials/vgui/ttt/ak47_icon.vmt")
+end
 
 if CLIENT then
    SWEP.PrintName = "Ak-47"
@@ -17,7 +37,7 @@ sound.Add({
 	name = 			"improv_AK47.BoltPull",
 	channel = 		CHAN_ITEM,
 	volume = 		1.0,
-	sound = 			"weapons/gunshot_irq_ak47/ak47_boltpull.wav"
+	sound = 			"weapons/gunshot_irq_ak47/ak47-1.wav"
 })
 
 sound.Add({

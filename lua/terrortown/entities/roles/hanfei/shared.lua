@@ -57,19 +57,22 @@ end
 
 if SERVER then
 	AddCSLuaFile()
-	util.AddNetworkString("hanfei_expose")
 	resource.AddFile("materials/vgui/ttt/dynamic/roles/icon_hanf.vmt")
-	resource.AddFile("weapons/jihad_bomb/jihad.wav")
-
+	resource.AddFile("sound/weapons/jihad_bomb/jihad.wav")
+    resource.AddFile("sound/weapons/jihad_bomb/big_explosion.wav")
+	
+	util.AddNetworkString("hanfei_expose")
 	function ROLE:GiveRoleLoadout(ply, isRoleChange)
 		--
 		ply:SetHealth(GetConVar("ttt_hanfei_hp"):GetInt())
+		
 		ply:Give("weapon_ttt_ak57",false)
-		ply:GiveEquipmentItem("item_ttt_radar")
 		ply:GiveAmmo(90,"SMG1",false)
-		ply:GiveArmor(GetConVar("ttt_hanfei_armor"):GetInt())
 		ply:Give("weapon_ttt_c4",false)
-        --ply:Give("weapon_ttt_kraber",false)
+		--ply:Give("weapon_ttt_kraber",false)
+		
+		ply:GiveEquipmentItem("item_ttt_radar")
+		ply:GiveArmor(GetConVar("ttt_hanfei_armor"):GetInt())
 	end
 	
 	hook.Add("TTT2SyncGlobals", "ttt2_hanfei_sync_convars", function()
@@ -124,6 +127,15 @@ if SERVER then
 	    end)
     end)
 	
+	function ROLE:RemoveRoleLoadout(ply, isRoleChange)
+        if isRoleChange then
+            ply:RemoveWeapon("weapon_ttt_c4") -- removing the medigun from the medic loadout
+            ply:RemoveEquipmentWeapon("item_ttt_radar") -- removing the defibrillator from the medic loadout
+			--ply:RemoveWeapon("weapon_ttt_kraber")
+            ply:RemoveArmor(GetConVar("ttt_hanfei_armor"):GetInt()) -- removing the armor from the medic loadout
+        end
+    end
+
 end
 
 if CLIENT then
