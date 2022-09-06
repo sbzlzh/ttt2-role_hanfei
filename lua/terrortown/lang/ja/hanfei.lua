@@ -9,4 +9,4 @@ L["body_found_" .. HANFEI.abbr] = "これは中東のギャングです."
 L["search_role_" .. HANFEI.abbr] = "この男は中東のギャングです!"
 L["target_" .. HANFEI.name] = "中東ギャング"
 L["ttt2_desc_" .. HANFEI.name] = [[これはさらに強力な裏切り者です。
-2C4から始めて、鎧、AK、死後にウララをトリガーすることができます!]]
+開局はC 4、護甲、AKを持参し、死後ウララを触発することができる!]]

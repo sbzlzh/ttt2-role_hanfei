@@ -2,11 +2,11 @@ local L = LANG.GetLanguageTableReference("it")
 
 
 -- GENERAL ROLE LANGUAGE STRINGS
-L[HANFEI.name] = "Gangster del Medio Oriente"
-L["info_popup_" .. HANFEI.name] = [[Sei un gangster del Medio Oriente!
+L[HANFEI.name] = "Banditi mediorientali"
+L["info_popup_" .. HANFEI.name] = [[Sei un Banditi mediorientali!
 Non essere timido, fallo e basta!]]
-L["body_found_" .. HANFEI.abbr] = "Questo è il gangster del Medio Oriente."
+L["body_found_" .. HANFEI.abbr] = "Questo è il Banditi mediorientali."
 L["search_role_" .. HANFEI.abbr] = "Questo ragazzo è un gangster mediorientale!"
-L["target_" .. HANFEI.name] = "Gangster del Medio Oriente"
+L["target_" .. HANFEI.name] = "Banditi mediorientali"
 L["ttt2_desc_" .. HANFEI.name] = [[Questo è un traditore ancora più forte.
-Inizia con 2C4, armatura, AK, può attivare Ulala dopo la morte!]]
+Inizia con C4, armatura e AK, che possono innescare urala dopo la morte!]]
