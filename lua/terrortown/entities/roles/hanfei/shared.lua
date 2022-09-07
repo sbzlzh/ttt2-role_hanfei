@@ -53,6 +53,7 @@ local function hanfei_Explode(ply,pos)
 	effect:SetRadius(r_outer)
 	effect:SetMagnitude(dmg)
 	util.Effect("Explosion", effect, true, true)
+
 end
 
 if SERVER then
