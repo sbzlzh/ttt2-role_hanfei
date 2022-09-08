@@ -1,2 +1,2 @@
-# ttt2-role_bandit
-This is the "Bandit" role for TTT2.
+# ttt2-role_middle east bandit
+This is the "middle east bandit" role for TTT2.
