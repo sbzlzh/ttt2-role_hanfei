@@ -24,6 +24,14 @@ if CLIENT then
    SWEP.PrintName = "Ak-47"
    SWEP.Slot = 6
    SWEP.Icon = "vgui/ttt/ak47_icon"
+   SWEP.ViewModelFlip = false
+   SWEP.ViewModelFOV = 70
+   SWEP.DrawCrosshair = false
+   
+   SWEP.EquipMenuData = {
+    type = "item_weapon",
+    desc = "Hanfei's weapon"
+   }
 end
 
 sound.Add({
@@ -62,10 +70,9 @@ sound.Add({
 })
 
 SWEP.Gun = ("weapon_ttt_ak57")
+
 SWEP.HoldType 				= "ar2"	
 
-SWEP.ViewModelFOV			= 70
-SWEP.ViewModelFlip			= false
 SWEP.ViewModel				= "models/weapons/v_irq_ak47.mdl"	-- Weapon view model
 SWEP.WorldModel				= "models/weapons/w_irq_ak47.mdl"	-- Weapon world model
 SWEP.ShowWorldModel			= false
@@ -177,4 +184,8 @@ function SWEP:DrawWorldModel( )
                 self:SetRenderAngles( nil )
                 self:DrawModel()
         end
+end
+
+function SWEP:OnDrop()
+	self:Remove()
 end

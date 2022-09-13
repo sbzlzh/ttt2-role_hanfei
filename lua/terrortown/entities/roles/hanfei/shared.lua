@@ -4,7 +4,8 @@ function ROLE:PreInitialize()
 	self.abbr = "hanf"
 
 	self.defaultTeam = TEAM_TRAITOR
-	--self.defaultEquipment = TRAITOR_EQUIPMENT
+	self.defaultEquipment = HANFEI_EQUIPMENT
+	self.preventFindCredits = true -- prevent finding credits
 	self.score.surviveBonusMultiplier = 0.5
 	self.score.timelimitMultiplier = -0.5
 	self.score.killsMultiplier = 2
@@ -58,21 +59,19 @@ end
 
 if SERVER then
 	AddCSLuaFile()
-	resource.AddFile("materials/vgui/ttt/dynamic/roles/icon_hanf.vmt")
-	resource.AddFile("sound/weapons/jihad_bomb/jihad.wav")
-    resource.AddFile("sound/weapons/jihad_bomb/big_explosion.wav")
-	
 	util.AddNetworkString("hanfei_expose")
+
 	function ROLE:GiveRoleLoadout(ply, isRoleChange)
 		--
 		ply:SetHealth(GetConVar("ttt_hanfei_hp"):GetInt())
 		
-		ply:Give("weapon_ttt_ak57",false)
-		ply:GiveAmmo(90,"SMG1",false)
-		ply:Give("weapon_ttt_c4",false)
+		ply:GiveEquipmentWeapon("weapon_ttt_ak57",false)
+		ply:GiveAmmo(60,"SMG1",false)
+		ply:GiveEquipmentWeapon("weapon_ttt_c4",false)
 		--ply:Give("weapon_ttt_kraber",false)
 		
 		ply:GiveEquipmentItem("item_ttt_radar")
+		
 		ply:GiveArmor(GetConVar("ttt_hanfei_armor"):GetInt())
 	end
 	
@@ -109,34 +108,33 @@ if SERVER then
 	
 	hook.Add("TTTBeginRound","ttt_hanfei_timer",function ()
 	    timer.Simple(GetConVar("ttt_hanfei_exposetime"):GetInt(), function()
-		    local info=""
+		    local info=" "
 		    local flag=false
 		    for k,v in ipairs(player.GetAll()) do
 			if v:GetSubRole()==ROLE_HANFEI then
 				flag=true
-				info=info .. v:Nick() .. ""
+				info=info .. v:Nick() .. ","
 				v.expose=true
 				--v:SetModel("models/cso2/pm/hasanpm.mdl")
 			end
 		end
 		    if flag then
-			    info=info .."is a Middle East Bandit. Let's take him down!"
+			    info=info .." is a Middle East Bandit. Let's take him down!"
 			    net.Start("hanfei_expose")
 			    net.WriteString(info)
 			    net.Broadcast()
 		    end
 	    end)
     end)
-	
+
 	function ROLE:RemoveRoleLoadout(ply, isRoleChange)
         if isRoleChange then
-            ply:RemoveWeapon("weapon_ttt_c4") -- removing the medigun from the medic loadout
-            ply:RemoveEquipmentWeapon("item_ttt_radar") -- removing the defibrillator from the medic loadout
-			--ply:RemoveWeapon("weapon_ttt_kraber")
-            ply:RemoveArmor(GetConVar("ttt_hanfei_armor"):GetInt()) -- removing the armor from the medic loadout
+            ply:StripWeapon("weapon_ttt_c4")
+            ply:StripWeapon("item_ttt_radar")
+			--ply:StripWeapon("weapon_ttt_kraber")
+            ply:RemoveArmor(GetConVar("ttt_hanfei_armor"):GetInt())
         end
     end
-
 end
 
 if CLIENT then
