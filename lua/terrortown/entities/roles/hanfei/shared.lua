@@ -1,52 +1,50 @@
+if SERVER then
+	AddCSLuaFile()
+	util.AddNetworkString("hanfei_expose")
+	resource.AddFile("materials/vgui/ttt/dynamic/roles/icon_hanf.vmt")
+	resource.AddFile("materials/vgui/ttt/ak47_icon.vmt")
+	resource.AddFile("sound/weapons/hanfei/jihad.wav")
+end
+
 function ROLE:PreInitialize()
 	self.color = Color(209, 43, 39, 255)
 
 	self.abbr = "hanf"
-
-	self.defaultTeam = TEAM_TRAITOR
-	self.defaultEquipment = HANFEI_EQUIPMENT
-	self.preventFindCredits = true -- prevent finding credits
 	self.score.surviveBonusMultiplier = 0.5
 	self.score.timelimitMultiplier = -0.5
 	self.score.killsMultiplier = 2
 	self.score.teamKillsMultiplier = -16
 	self.score.bodyFoundMuliplier = 0
-	self.fallbackTable = {}
-
-	-- conVarData
+	
+	self.defaultTeam = TEAM_TRAITOR
+	self.defaultEquipment = SPECIAL_EQUIPMENT
+	self.preventFindCredits = true
+	
 	self.conVarData = {
-		pct = 0.125,
+		pct = 0.13,
 		maximum = 1,
 		minPlayers = 8,
-		traitorButton = 1
+		random = 70,
+		traitorButton = 1,
+		togglable = true,
+		credits = 2,
+		creditsAwardDeadEnable = 1,
+		creditsAwardKillEnable = 1,
+		shopFallback = nil
 	}
 end
+
 
 function ROLE:Initialize()
 	roles.SetBaseRole(self, ROLE_TRAITOR)
 end
-
-CreateConVar("ttt_hanfei_hp", 150, {FCVAR_NOTIFY, FCVAR_ARCHIVE})
-CreateConVar("ttt_hanfei_armor", 100, {FCVAR_NOTIFY, FCVAR_ARCHIVE})
-CreateConVar("ttt_hanfei_exposetime", 60, {FCVAR_NOTIFY, FCVAR_ARCHIVE})
-
-hook.Add("TTTUlxDynamicRCVars", "TTTUlxDynamicGAIYACVars", function(tbl)
-	tbl[ROLE_HANFEI] = tbl[ROLE_HANFEI] or {}
-	table.insert(tbl[ROLE_HANFEI], {cvar = "ttt_hanfei_hp", slider = true, min = 100, max = 200, decimal = 0, desc = "hp (def. 150)"})
-	table.insert(tbl[ROLE_HANFEI], {cvar = "ttt_hanfei_armor", slider = true, min = 0, max = 150, decimal = 0, desc = "armor (def. 100)"})
-	table.insert(tbl[ROLE_HANFEI], {cvar = "ttt_hanfei_exposetime", slider = true, min = 0, max = 600, decimal = 0, desc = "expose time (def. 60)"})
-end)
 
 -- explosion properties
 local function hanfei_Explode(ply,pos)
 	local dmg = 200
 	local r_inner = 550
 	local r_outer = r_inner * 1.15
-	-- EmitSound( Sound( "weapons/jihad_bomb/big_explosion.wav" ), pos, ply:EntIndex(), CHAN_AUTO, 1, 400, 0, math.random(100, 125) )
-	-- ply:EmitSound("weapons/jihad_bomb/big_explosion.wav", 400, math.random(100, 125))
-	-- explosion damage
  	util.BlastDamage( ply, ply, pos, r_outer,dmg )
-	-- util.BlastDamage(self, dmgowner, pos, r_outer, dmg)
 	local effect = EffectData()
 	effect:SetStart(pos)
 	effect:SetOrigin(pos)
@@ -54,55 +52,26 @@ local function hanfei_Explode(ply,pos)
 	effect:SetRadius(r_outer)
 	effect:SetMagnitude(dmg)
 	util.Effect("Explosion", effect, true, true)
-
 end
-
 if SERVER then
-	AddCSLuaFile()
-	util.AddNetworkString("hanfei_expose")
-
+    -- adding loadout on role change/spawn
 	function ROLE:GiveRoleLoadout(ply, isRoleChange)
-		--
-		ply:SetHealth(GetConVar("ttt_hanfei_hp"):GetInt())
-		
-		ply:GiveEquipmentWeapon("weapon_ttt_ak57",false)
-		ply:GiveAmmo(60,"SMG1",false)
-		ply:GiveEquipmentWeapon("weapon_ttt_c4",false)
-		--ply:Give("weapon_ttt_kraber",false)
-		
+		ply:GiveEquipmentWeapon("weapon_ttt_ak57")
+		ply:GiveAmmo(90,"SMG1")
+		ply:GiveEquipmentWeapon("weapon_ttt_c4")
+		--ply:Give("weapon_ttt_kraber")
 		ply:GiveEquipmentItem("item_ttt_radar")
-		
 		ply:GiveArmor(GetConVar("ttt_hanfei_armor"):GetInt())
+	    ply:SetHealth(GetConVar("ttt_hanfei_hp"):GetInt())
 	end
-	
-	hook.Add("TTT2SyncGlobals", "ttt2_hanfei_sync_convars", function()
-		SetGlobalInt("ttt_hanfei_hp", GetConVar("ttt_hanfei_hp"):GetFloat())
-		SetGlobalInt("ttt_hanfei_armor", GetConVar("ttt_hanfei_armor"):GetInt())
-		SetGlobalInt("ttt_hanfei_exposetime", GetConVar("ttt_hanfei_exposetime"):GetInt())
-	end)
 
-	-- sync convars on change
-	cvars.AddChangeCallback("ttt_hanfei_hp", function(cv, old, new)
-		SetGlobalInt("ttt_hanfei_hp", tonumber(new))
-	end)
-
-	cvars.AddChangeCallback("ttt_hanfei_armor", function(cv, old, new)
-		SetGlobalInt("ttt_hanfei_armor", tonumber(new))
-	end)
-
-	cvars.AddChangeCallback("ttt_hanfei_exposetime", function(cv, old, new)
-		SetGlobalInt("ttt_hanfei_exposetime", tonumber(new) )
-	end)
-	
 	hook.Add( "PlayerDeath", "ttt_hanfei_death", function( victim, inflictor, attacker )
-		-- Only explode, if the code was completely typed in
 		if victim:GetSubRole()==ROLE_HANFEI then
 			local pos=victim:GetPos()
 			timer.Simple(2.05, function()
 				hanfei_Explode(victim,pos) 
 			end)
-			-- EmitSound("weapons/jihad_bomb/jihad.wav", pos,victim:EntIndex(), CHAN_AUTO, 1, math.random(100, 150), 0, math.random(95, 105) )
-			victim:EmitSound("weapons/jihad_bomb/jihad.wav", math.random(100, 150), math.random(95, 105))
+			victim:EmitSound("weapons/hanfei/jihad.wav", math.random(100, 150), math.random(95, 105))
 		end
 	end)
 	
@@ -126,12 +95,12 @@ if SERVER then
 		    end
 	    end)
     end)
-
+    -- removing loadout on role change/despawn
 	function ROLE:RemoveRoleLoadout(ply, isRoleChange)
         if isRoleChange then
-            ply:StripWeapon("weapon_ttt_c4")
-            ply:StripWeapon("item_ttt_radar")
-			--ply:StripWeapon("weapon_ttt_kraber")
+		    --ply:RemoveEquipmentWeapon("weapon_ttt_kraber")
+			ply:RemoveEquipmentWeapon("weapon_ttt_ak57")
+			ply:RemoveEquipmentWeapon("weapon_ttt_c4")
             ply:RemoveArmor(GetConVar("ttt_hanfei_armor"):GetInt())
         end
     end
@@ -143,5 +112,29 @@ if CLIENT then
         chat.AddText( Color( 255, 0, 0 ),info)
         chat.AddText( Color( 255, 0, 0 ),info)
         chat.AddText( Color( 255, 0, 0 ),info)
-	end)	
+	end)
+	function ROLE:AddToSettingsMenu(parent)
+	    local form = vgui.CreateTTT2Form(parent, "header_roles_additional")
+        form:MakeSlider({
+            serverConvar = "ttt_hanfei_armor",
+            label = "label_hanfei_armor",
+            min = 0,
+            max = 1000,
+            decimal = 0
+        })
+		form:MakeSlider({
+            serverConvar = "ttt_hanfei_hp",
+            label = "label_hanfei_hp",
+            min = 0,
+            max = 1000,
+            decimal = 0
+        })		
+		form:MakeSlider({
+            serverConvar = "ttt_hanfei_exposetime",
+            label = "label_hanfei_exposetime",
+            min = 0,
+            max = 120,
+            decimal = 0
+        })
+	end
 end

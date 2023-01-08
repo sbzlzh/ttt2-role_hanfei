@@ -1,73 +1,21 @@
 if SERVER then
 	AddCSLuaFile()
-	resource.AddFile("models/weapons/v_irq_ak47.mdl")
-	resource.AddFile("models/weapons/w_irq_ak47.mdl")
-	resource.AddFile("sound/weapons/gunshot_irq_ak47/ak47_boltpull.wav")
-	resource.AddFile("sound/weapons/gunshot_irq_ak47/ak47_boltrelease.wav")
-	resource.AddFile("sound/weapons/gunshot_irq_ak47/ak47_clipin.mdl")
-	resource.AddFile("sound/weapons/gunshot_irq_ak47/ak47_clipout.mdl")
-	resource.AddFile("sound/weapons/gunshot_irq_ak47/ak47-1.mdl")
-	resource.AddFile("materials/shellz/ak.vmt")
-	resource.AddFile("materials/models/shellz/ak.vmt")
-	resource.AddFile("materials/models/weapons/v_models/thanez_ak/magazine.vmt")
-	resource.AddFile("materials/models/weapons/v_models/thanez_ak/receiver.vmt")
-	resource.AddFile("materials/models/weapons/v_models/thanez_ak/upper.vmt")
-	resource.AddFile("materials/models/weapons/w_models/thanez_ak/magazine.vmt")
-	resource.AddFile("materials/models/weapons/w_models/thanez_ak/receiver.vmt")
-	resource.AddFile("materials/models/weapons/w_models/thanez_ak/upper.vmt")
-	resource.AddFile("materials/vgui/entities/pspak_irq_ak47.vmt")
-	resource.AddFile("materials/vgui/hud/pspak_irq_ak47.vmt")
-	resource.AddFile("materials/vgui/ttt/ak47_icon.vmt")
+	AddCSLuaFile("autorun/aksound.lua")
 end
 
 if CLIENT then
-   SWEP.PrintName = "Ak-47"
-   SWEP.Slot = 6
-   SWEP.Icon = "vgui/ttt/ak47_icon"
-   SWEP.ViewModelFlip = false
-   SWEP.ViewModelFOV = 70
-   SWEP.DrawCrosshair = false
+    SWEP.PrintName = "Ak-47"
+    SWEP.Slot = 6
+    SWEP.Icon = "vgui/ttt/ak47_icon"
+    SWEP.ViewModelFlip = false
+    SWEP.ViewModelFOV = 70
+    SWEP.DrawCrosshair = false
    
-   SWEP.EquipMenuData = {
-    type = "item_weapon",
-    desc = "Hanfei's weapon"
-   }
+    SWEP.EquipMenuData = {
+        type = "item_weapon",
+        desc = "Hanfei's weapon"
+    }
 end
-
-sound.Add({
-	name = 			"gunshot_irq_ak47",
-	channel = 		CHAN_USER_BASE+10, --see how this is a different channel? Gunshots go here
-	volume = 		1.0,
-	sound = 			"weapons/gunshot_irq_ak47/ak47-1.wav"
-})
-
-sound.Add({
-	name = 			"improv_AK47.BoltPull",
-	channel = 		CHAN_ITEM,
-	volume = 		1.0,
-	sound = 			"weapons/gunshot_irq_ak47/ak47-1.wav"
-})
-
-sound.Add({
-	name = 			"improv_AK47.BoltRelease",
-	channel = 		CHAN_ITEM,
-	volume = 		1.0,
-	sound = 			"weapons/gunshot_irq_ak47/ak47_boltrelease.wav"
-})
-
-sound.Add({
-	name = 			"improv_AK47.Clipout",
-	channel = 		CHAN_ITEM,
-	volume = 		1.0,
-	sound = 			"weapons/gunshot_irq_ak47/ak47_clipout.wav"
-})
-
-sound.Add({
-	name = 			"improv_AK47.Clipin",
-	channel = 		CHAN_ITEM,
-	volume = 		1.0,
-	sound = 			"weapons/gunshot_irq_ak47/ak47_clipin.wav"
-})
 
 SWEP.Gun = ("weapon_ttt_ak57")
 
@@ -81,7 +29,7 @@ SWEP.Spawnable				= true
 SWEP.AdminSpawnable			= true
 
 SWEP.Primary.Sound			= Sound("gunshot_irq_ak47")		-- Script that calls the primary fire sound
-SWEP.Primary.SilencedSound 	= Sound("")		-- Sound if the weapon is silenced
+--SWEP.Primary.SilencedSound 	= Sound("")		-- Sound if the weapon is silenced
 SWEP.Primary.Ammo = "SMG1"
 SWEP.Primary.Delay = 0.095
 SWEP.Primary.Recoil = 1.2
@@ -118,48 +66,48 @@ if CLIENT then
 end
 
 SWEP.Offset = {
-Pos = {
-Up = 0,
-Right = 1,
-Forward = -2,
-},
-Ang = {
-Up = 0,
-Right = 355,
-Forward = 180,
-}
+    Pos = {
+        Up = 0,
+        Right = 1,
+        Forward = -2,
+    },
+    Ang = {
+        Up = 0,
+        Right = 355,
+        Forward = 180,
+    }
 }
 
 function SWEP:DrawWorldModel( )
-local hand, offset, rotate
+    local hand, offset, rotate
+    if not IsValid( self.Owner ) then self:DrawModel( )return end
+    if not self.Hand then
+        self.Hand = self.Owner:LookupAttachment( "anim_attachment_rh" )
+    end
 
-if not IsValid( self.Owner ) then
-self:DrawModel( )
-return
+    hand = self.Owner:GetAttachment( self.Hand )
+
+    if not hand then self:DrawModel( ) return end
+
+    offset = hand.Ang:Right( ) * self.Offset.Pos.Right + hand.Ang:Forward( ) * self.Offset.Pos.Forward + hand.Ang:Up( ) * self.Offset.Pos.Up
+
+    hand.Ang:RotateAroundAxis( hand.Ang:Right( ), self.Offset.Ang.Right )
+    hand.Ang:RotateAroundAxis( hand.Ang:Forward( ), self.Offset.Ang.Forward )
+    hand.Ang:RotateAroundAxis( hand.Ang:Up( ), self.Offset.Ang.Up )
+
+    self:SetRenderOrigin( hand.Pos + offset )
+    self:SetRenderAngles( hand.Ang )
+
+    self:DrawModel( )
 end
 
-if not self.Hand then
-self.Hand = self.Owner:LookupAttachment( "anim_attachment_rh" )
+function SWEP:Reload()
+	if ( self:Clip1() == self.Primary.ClipSize or self:GetOwner():GetAmmoCount( self.Primary.Ammo ) <= 0 ) then return end
+   self:DefaultReload( ACT_VM_RELOAD )
+   self:SetIronsights( false )
+   self:SetZoom( false )
 end
 
-hand = self.Owner:GetAttachment( self.Hand )
-
-if not hand then
-self:DrawModel( )
-return
-end
-
-offset = hand.Ang:Right( ) * self.Offset.Pos.Right + hand.Ang:Forward( ) * self.Offset.Pos.Forward + hand.Ang:Up( ) * self.Offset.Pos.Up
-
-hand.Ang:RotateAroundAxis( hand.Ang:Right( ), self.Offset.Ang.Right )
-hand.Ang:RotateAroundAxis( hand.Ang:Forward( ), self.Offset.Ang.Forward )
-hand.Ang:RotateAroundAxis( hand.Ang:Up( ), self.Offset.Ang.Up )
-
-self:SetRenderOrigin( hand.Pos + offset )
-self:SetRenderAngles( hand.Ang )
-
-self:DrawModel( )
-end
 function SWEP:DrawWorldModel( )
         local hand, offset, rotate
 
