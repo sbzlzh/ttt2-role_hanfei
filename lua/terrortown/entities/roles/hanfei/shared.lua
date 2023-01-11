@@ -1,6 +1,5 @@
 if SERVER then
 	AddCSLuaFile()
-	util.AddNetworkString("hanfei_expose")
 	resource.AddFile("materials/vgui/ttt/dynamic/roles/icon_hanf.vmt")
 	resource.AddFile("materials/vgui/ttt/ak47_icon.vmt")
 	resource.AddFile("sound/weapons/hanfei/jihad.wav")
@@ -75,23 +74,22 @@ if SERVER then
 		end
 	end)
 	
-	hook.Add("TTTBeginRound","ttt_hanfei_timer",function ()
+	hook.Add("TTTBeginRound","ttt_hanfei_timer",function()
 	    timer.Simple(GetConVar("ttt_hanfei_exposetime"):GetInt(), function()
-		    local info=" "
 		    local flag=false
 		    for k,v in ipairs(player.GetAll()) do
 			if v:GetSubRole()==ROLE_HANFEI then
 				flag=true
-				info=info .. v:Nick() .. ","
 				v.expose=true
 				--v:SetModel("models/cso2/pm/hasanpm.mdl")
 			end
 		end
 		    if flag then
-			    info=info .." is a Middle East Bandit. Let's take him down!"
-			    net.Start("hanfei_expose")
-			    net.WriteString(info)
-			    net.Broadcast()
+			    for k,v in ipairs(player.GetAll()) do
+				    if v:GetSubRole()==ROLE_HANFEI then
+			            info=LANG.MsgAll("ttt2_hanfei_chat_reveal",{playername = v:Nick()}, MSG_CHAT_WARN)
+				    end
+				end
 		    end
 	    end)
     end)
@@ -107,12 +105,6 @@ if SERVER then
 end
 
 if CLIENT then
-	net.Receive("hanfei_expose",function ()
-		local info=net.ReadString()
-        chat.AddText( Color( 255, 0, 0 ),info)
-        chat.AddText( Color( 255, 0, 0 ),info)
-        chat.AddText( Color( 255, 0, 0 ),info)
-	end)
 	function ROLE:AddToSettingsMenu(parent)
 	    local form = vgui.CreateTTT2Form(parent, "header_roles_additional")
         form:MakeSlider({

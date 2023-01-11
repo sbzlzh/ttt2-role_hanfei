@@ -102,38 +102,39 @@ function SWEP:DrawWorldModel( )
 end
 
 function SWEP:Reload()
-	if ( self:Clip1() == self.Primary.ClipSize or self:GetOwner():GetAmmoCount( self.Primary.Ammo ) <= 0 ) then return end
-   self:DefaultReload( ACT_VM_RELOAD )
-   self:SetIronsights( false )
-   self:SetZoom( false )
+    if ( self:Clip1() == self.Primary.ClipSize or self:GetOwner():GetAmmoCount( self.Primary.Ammo ) <= 0 ) then return end
+    self:DefaultReload( ACT_VM_RELOAD )
+    self:SetIronsights( false )
+    self:SetZoom( false )
 end
 
 function SWEP:DrawWorldModel( )
-        local hand, offset, rotate
-
-        local pl = self:GetOwner()
-
-        if IsValid( pl ) then
-                        local boneIndex = pl:LookupBone( "ValveBiped.Bip01_R_Hand" )
-                        if boneIndex then
-                                local pos, ang = pl:GetBonePosition( boneIndex )
-                                pos = pos + ang:Forward() * self.Offset.Pos.Forward + ang:Right() * self.Offset.Pos.Right + ang:Up() * self.Offset.Pos.Up
-
-                                ang:RotateAroundAxis( ang:Up(), self.Offset.Ang.Up)
-                                ang:RotateAroundAxis( ang:Right(), self.Offset.Ang.Right )
-                                ang:RotateAroundAxis( ang:Forward(),  self.Offset.Ang.Forward )
-
-                                self:SetRenderOrigin( pos )
-                                self:SetRenderAngles( ang )
-                                self:DrawModel()
-                        end
-        else
-                self:SetRenderOrigin( nil )
-                self:SetRenderAngles( nil )
+    local hand, offset, rotate
+	
+    local pl = self:GetOwner()
+	
+    if IsValid( pl ) then
+	
+        local boneIndex = pl:LookupBone( "ValveBiped.Bip01_R_Hand" )
+		
+            if boneIndex then
+			
+                local pos, ang = pl:GetBonePosition( boneIndex )
+                pos = pos + ang:Forward() * self.Offset.Pos.Forward + ang:Right() * self.Offset.Pos.Right + ang:Up() * self.Offset.Pos.Up
+                ang:RotateAroundAxis( ang:Up(), self.Offset.Ang.Up)
+                ang:RotateAroundAxis( ang:Right(), self.Offset.Ang.Right )
+                ang:RotateAroundAxis( ang:Forward(),  self.Offset.Ang.Forward )
+                self:SetRenderOrigin( pos )
+                self:SetRenderAngles( ang )
                 self:DrawModel()
-        end
+            end
+    else
+        self:SetRenderOrigin( nil )
+        self:SetRenderAngles( nil )
+        self:DrawModel()
+    end
 end
 
 function SWEP:OnDrop()
-	self:Remove()
+	--self:Remove()
 end
