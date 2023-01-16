@@ -1,8 +1,8 @@
 -- Translated from https://www.deepl.com/en/translator, may not be translated correctly if you intend to change the error, go to this link to change https://github.com/sbzlzh/ttt2-role_hanfei or contact the steam author
---[[local L = LANG.GetLanguageTableReference("it")
+local L = LANG.GetLanguageTableReference("it")
 
 -- GENERAL ROLE LANGUAGE STRINGS
-L[HANFEI.name] = "Umani mediorientali"
+--[[L[HANFEI.name] = "Umani mediorientali"
 L["info_popup_" .. HANFEI.name] = [[Sei un Humvee mediorientale!
 Non fare il fifone, fallo e basta!]]
 L["body_found_" .. HANFEI.abbr] = "Sono umani mediorientali!"

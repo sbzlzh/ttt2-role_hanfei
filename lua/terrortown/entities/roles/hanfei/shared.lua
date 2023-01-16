@@ -40,9 +40,9 @@ end
 
 -- explosion properties
 local function hanfei_Explode(ply,pos)
-	local dmg = 200
-	local r_inner = 550
-	local r_outer = r_inner * 1.15
+	local dmg = 350
+	local r_inner = 500
+	local r_outer = r_inner * 1.2
  	util.BlastDamage( ply, ply, pos, r_outer,dmg )
 	local effect = EffectData()
 	effect:SetStart(pos)
@@ -111,14 +111,14 @@ if CLIENT then
             serverConvar = "ttt_hanfei_armor",
             label = "label_hanfei_armor",
             min = 0,
-            max = 1000,
+            max = 500,
             decimal = 0
         })
 		form:MakeSlider({
             serverConvar = "ttt_hanfei_hp",
             label = "label_hanfei_hp",
             min = 0,
-            max = 1000,
+            max = 500,
             decimal = 0
         })		
 		form:MakeSlider({

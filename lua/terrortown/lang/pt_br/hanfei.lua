@@ -1,8 +1,8 @@
 -- Translated from https://www.deepl.com/en/translator, may not be translated correctly if you intend to change the error, go to this link to change https://github.com/sbzlzh/ttt2-role_hanfei or contact the steam author
---[[local L = LANG.GetLanguageTableReference("pt_br")
+local L = LANG.GetLanguageTableReference("pt_br")
 
 -- GENERAL ROLE LANGUAGE STRINGS
-L[HANFEI.name] = "Bliski Wschód Ludzie"
+--[[L[HANFEI.name] = "Bliski Wschód Ludzie"
 L["info_popup_" .. HANFEI.name] = [[Jesteś bliskowschodnim humvee!
 Nie bądź mięczakiem, po prostu to zrób!]]
 L["body_found_" .. HANFEI.abbr] = "To bliskowschodni ludzie!"
