@@ -6,6 +6,8 @@ The Middle East Bandit is a traitor without a shop,but he carries an AK , C4 and
 ## Convars
 
 Besides the normal role convars found in ULX, there are these special convars:
+
+```
 # enable or disable this role
   ttt_hanfei_enabled [0/1] (default: 1)
 # the percentage of players that are spawned as this role
@@ -16,7 +18,6 @@ Besides the normal role convars found in ULX, there are these special convars:
   ttt_hanfei_random [0..100] (default: 100)
 # the amount of players needed for this role to spawn
   ttt_hanfei_min_players: [0..n] (default: 8)
-```
 # Initial HP setting of the Middle East Bandit
   ttt_hanfei_hp [100..200] (default: 150)
 # Give the Middle East Bandit armor settings
