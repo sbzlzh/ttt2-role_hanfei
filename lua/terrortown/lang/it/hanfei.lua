@@ -1,17 +1,19 @@
--- Translated from https://www.deepl.com/en/translator, may not be translated correctly if you intend to change the error, go to this link to change https://github.com/sbzlzh/ttt2-role_hanfei or contact the steam author
+-- L'utilizzo di ChatGPT-4 per la traduzione potrebbe comportare imprecisioni; visita questo link per apportare modifiche: https://github.com/sbzlzh/ttt2-role_hanfei, o contatta Steam: https://steamcommunity.com/profiles/76561198444795757/
+-- Questo personaggio non ha attaccato nessuna persona, cosa o situazione; per favore, non leggere troppo in esso.
+-- Data di aggiornamento: 28 marzo 2023
 local L = LANG.GetLanguageTableReference("it")
 
 -- GENERAL ROLE LANGUAGE STRINGS
---[[L[HANFEI.name] = "Umani mediorientali"
-L["info_popup_" .. HANFEI.name] = [[Sei un Humvee mediorientale!
-Non fare il fifone, fallo e basta!]]
-L["body_found_" .. HANFEI.abbr] = "Sono umani mediorientali!"
-L["search_role_" .. HANFEI.abbr] = "Quest'uomo è un Humvee mediorientale!"
-L["target_" .. HANFEI.name] = "Umani del Medio Oriente"
-L["ttt2_desc_" .. HANFEI.name] = [[Questo è un forte traditore!
-Si apre con il suo C4, un'armatura elevata e un AK, ma può attivare Ulala per farsi esplodere quando muore!]]
+L[HANFEI.name] = "Bandito del Medio Oriente"
+L["info_popup_" .. HANFEI.name] = [[Sei il Bandito del Medio Oriente!
+Non esitare, fallo!]]
+L["body_found_" .. HANFEI.abbr] = "Questo è il Bandito del Medio Oriente!"
+L["search_role_" .. HANFEI.abbr] = "Questa persona è il Bandito del Medio Oriente!"
+L["target_" .. HANFEI.name] = "Bandito del Medio Oriente"
+L["ttt2_desc_" .. HANFEI.name] = [[Questo è un traditore potente!
+Inizia il gioco con un C4, un'alta armatura e un AK. Alla morte, scatena un effetto sonoro di Allahu Akbar ed esplode, causando danni di area!]]
 
 L["label_hanfei_armor"] = "Quantità di armatura"
-L["label_hanfei_hp"] = "Numero di punti vita"
+L["label_hanfei_hp"] = "Quantità di punti vita"
 L["label_hanfei_exposetime"] = "Tempo di esposizione"
-L["ttt2_hanfei_chat_reveal"] = "{playername} è un Council Hummer, sputtaniamolo tutti!"--]]
+L["ttt2_hanfei_chat_reveal"] = "{playername} è il Bandito del Medio Oriente in questo turno, abbattiamolo tutti insieme!"
