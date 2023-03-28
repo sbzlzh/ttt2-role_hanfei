@@ -1,6 +1,6 @@
--- 使用chatgpt-4翻译,可能会翻译不正确,请到此链接更改: https://github.com/sbzlzh/ttt2-role_hanfei ,或联系steam：https://steamcommunity.com/profiles/76561198444795757/
--- 该角色并没有什么事,人,物进行任何攻击,请不要带入其中
--- 更新时间: 2023年3月28日
+-- 使用chatgpt-4翻譯，可能會翻譯不正確，請到此鏈接更改：https://github.com/sbzlzh/ttt2-role_hanfei ，或聯繫steam：https://steamcommunity.com/profiles/76561198444795757/
+-- 該角色並沒有什麼事、人、物進行任何攻擊，請不要帶入其中
+-- 更新時間：2023年3月28日
 local L = LANG.GetLanguageTableReference("zh_tw")
 
 -- GENERAL ROLE LANGUAGE STRINGS

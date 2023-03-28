@@ -1,5 +1,5 @@
 -- Using ChatGPT-4 for translation may result in inaccuracies, please visit this link to make changes: https://github.com/sbzlzh/ttt2-role_hanfei, or contact Steam: https://steamcommunity.com/profiles/76561198444795757/
--- This character has not attacked any person, thing, or situation, please do not read into it.
+-- This character does not attack things, people, or objects. Please do not get involved.
 -- Update time: March 28, 2023
 local L = LANG.GetLanguageTableReference("en")
 

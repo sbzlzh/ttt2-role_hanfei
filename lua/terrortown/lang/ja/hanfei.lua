@@ -1,5 +1,5 @@
 -- ChatGPT-4を使用した翻訳では、正確性に欠ける場合があります。変更を加えるには、次のリンクにアクセスしてください: https://github.com/sbzlzh/ttt2-role_hanfei または、Steamに連絡してください: https://steamcommunity.com/profiles/76561198444795757/
--- このキャラクターは何も攻撃していません。人、物、状況を読み取らないでください。
+-- このキャラクターは事柄、人、物に対して攻撃を行っていません。どうか巻き込まないでください。
 -- 更新日: 2023年3月28日
 local L = LANG.GetLanguageTableReference("ja")
 
