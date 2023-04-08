@@ -1,0 +1,46 @@
+[i]You are a powerful the Middle East Bandit.Hunt to your heart's content.[/i]
+
+You have to use [URL=https://steamcommunity.com/sharedfiles/filedetails/?id=1357204556]TTT2[/URL] in order to use this role. Additionally using [URL=https://steamcommunity.com/sharedfiles/filedetails/?id=1362430347]ULX for TTT2[/URL] is recommended. Submit new role ideas [URL=https://github.com/TTT-2/addon-ideas]here[/URL].A list of all currently available roles can be found [URL=https://steamcommunity.com/sharedfiles/filedetails/?id=1737053146]here[/URL].
+
+Discord: [url=https://discord.gg/Npcbb4W]https://discord.gg/Npcbb4W[/url]
+Source: [url=https://github.com/sbzlzh/ttt2-role_hanfei]https://github.com/sbzlzh/ttt2-role_hanfei[/url]
+
+[img]https://i.imgur.com/KeP4fWN.png[/img]
+
+The Middle East Bandit is a traitor without a shop,but he carries an AK , C4 and has high HP and armor.If the Middle East Bandit is killed, it will cause a certain range of self explosion damage.
+
+[h1]Plays best with:[/h1]
+[list]
+	[*][URL=https://steamcommunity.com/sharedfiles/filedetails/?id=2605759027]Swapper[/URL]
+        [*][URL=https://steamcommunity.com/sharedfiles/filedetails/?id=2220740853]Medic[/URL]
+        [*][URL=https://steamcommunity.com/sharedfiles/filedetails/?id=1392362130]Jackal[/URL]
+        [*][URL=https://steamcommunity.com/sharedfiles/filedetails/?id=1457185541]Unknown[/URL]
+[/list]
+
+[img]https://i.imgur.com/jIBWtbM.png[/img]
+
+Convars are variables that are introduced to allow server owners to customize the gameplay without changing the code. There are always a handful of convars automatically created by TTT2, that define the spawn parameters of this role and are found in ULX. Additionally there might be some role specific convars, which have to be set in the server config file.
+
+[h1]Role Convars (also found in ULX):[/h1]
+[code]# enable or disable this role
+  ttt_hanfei_enabled [0/1] (default: 1)
+# the percentage of players that are spawned as this role
+  ttt_hanfei_pct [0.0..1.0] (default: 0.13)
+# the limit of players that spawn as this role each round, this overwrites the percentage
+  ttt_hanfei_max [0..n] (default: 1)
+# the probability each round of this role being spawned at all
+  ttt_hanfei_random [0..100] (default: 70)
+# the amount of players needed for this role to spawn
+  ttt_hanfei_min_players: [0..n] (default: 8)[/code]
+
+[h1]Rolespecific Convars:[/h1]
+[code]
+# Initial HP setting of the Middle East Bandit
+  ttt_hanfei_hp [100..200] (default: 150)
+# Give the Middle East Bandit armor settings
+  ttt_hanfei_armor [0..150] (default: 50)
+# Automatic expose time setting of the Middle East Bandit
+  ttt_hanfei_exposetime [0..600] (default: 60 seconds)[/code]
+
+[h1]Credits:[/h1]
+[URL=https://steamcommunity.com/sharedfiles/filedetails/?id=2844217799]Ak47 wepaon resource[/URL]: designe of the role weapon
