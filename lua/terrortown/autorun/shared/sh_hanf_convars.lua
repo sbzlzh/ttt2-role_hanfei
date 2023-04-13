@@ -18,5 +18,6 @@ if CLIENT then
     hook.Add("TTT2FinishedLoading", "TTT2RegistermexikoediAddonDev", function()
         AddTTT2AddonDev("76561199046379906")
 		AddTTT2AddonDev("76561198444795757")
+		AddTTT2AddonDev("76561197990533517")
     end)
 end
