@@ -75,7 +75,7 @@ local function hanfei_Explode(ply, pos)
 end
 
 if SERVER then
-	-- adding loadout on role change/spawn
+	-- Adding loadout on role change/spawn
 	function ROLE:GiveRoleLoadout(ply, isRoleChange)
 		-- Assign equipment and weapons to the player
 		-- If player doesn't have AK57, give AK57
@@ -116,21 +116,22 @@ if SERVER then
 			local flag = false
 			local hanfei_players = ""
 
-			-- check if there is a Hanfei character in the game
+			-- Check if there is a Hanfei character in the game
 			for k, v in ipairs(player.GetAll()) do
 				if v:GetSubRole() == ROLE_HANFEI then
 					flag = true
 					v.expose = true
+					-- Used to customize the role model, when automatically exposed will become the set model, if not set is the default model
 					--v:SetModel("models/cso2/pm/hasanpm.mdl")
 					hanfei_players = hanfei_players .. v:Nick() .. ", "
 				end
 			end
 
-			--if there is a Hanfei character, notify all players
+			-- If there is a Hanfei character, notify all players
 			if flag then
 				hanfei_players = string.sub(hanfei_players, 1, -3) -- remove the last comma and space
 
-				-- send the message three times
+				-- Send the message three times
 				for i = 1, 3 do
 					local info = LANG.MsgAll("ttt2_hanfei_chat_reveal", { playername = hanfei_players }, MSG_CHAT_WARN)
 				end
