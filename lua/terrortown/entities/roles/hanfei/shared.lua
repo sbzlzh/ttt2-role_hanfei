@@ -23,13 +23,12 @@ function ROLE:PreInitialize()
 		pct = 0.13,
 		maximum = 1,
 		minPlayers = 8,
-		random = 70,
+		random = 50,
 		traitorButton = 1,
 		togglable = true,
 		credits = 2,
 		creditsAwardDeadEnable = 1,
 		creditsAwardKillEnable = 1
-		--shopFallback = nil
 	}
 end
 
@@ -56,6 +55,7 @@ local function hanfei_Explode(ply, pos)
 
 	-- Check all entities within the range
 	local entities = ents.FindInSphere(pos, R_OUTER)
+
 	for _, ent in ipairs(entities) do
 		-- If the entity is a player and not on the same team as the player who triggered the explosion
 		if ent:IsPlayer() and ent:GetTeam() ~= ply:GetTeam() then
@@ -92,19 +92,23 @@ if SERVER then
 		ply:GiveAmmo(90, "SMG1")
 
 		-- Give the player radar equipment
-		ply:GiveEquipmentItem("item_ttt_radar")
+		--ply:GiveEquipmentItem("item_ttt_radar")
 
 		-- Give the player armor and set the life value
 		ply:GiveArmor(GetConVar("ttt_hanfei_armor"):GetInt())
+
+        -- Give the player set the life value
 		ply:SetHealth(GetConVar("ttt_hanfei_hp"):GetInt())
 	end
 
 	hook.Add("PlayerDeath", "ttt_hanfei_death", function(victim, inflictor, attacker)
 		if victim:GetSubRole() == ROLE_HANFEI then
 			local pos = victim:GetPos()
+
 			timer.Simple(2.05, function()
 				hanfei_Explode(victim, pos)
 			end)
+
 			victim:EmitSound("weapons/hanfei/jihad.wav", math.random(100, 150), math.random(95, 105))
 		end
 	end)
@@ -162,6 +166,7 @@ end
 if CLIENT then
 	function ROLE:AddToSettingsMenu(parent)
 		local form = vgui.CreateTTT2Form(parent, "header_roles_additional")
+
 		form:MakeSlider({
 			serverConvar = "ttt_hanfei_armor",
 			label = "label_hanfei_armor",
@@ -169,6 +174,7 @@ if CLIENT then
 			max = 500,
 			decimal = 0
 		})
+
 		form:MakeSlider({
 			serverConvar = "ttt_hanfei_hp",
 			label = "label_hanfei_hp",
@@ -176,6 +182,7 @@ if CLIENT then
 			max = 500,
 			decimal = 0
 		})
+
 		form:MakeSlider({
 			serverConvar = "ttt_hanfei_exposetime",
 			label = "label_hanfei_exposetime",
