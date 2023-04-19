@@ -97,7 +97,7 @@ if SERVER then
 		-- Give the player armor and set the life value
 		ply:GiveArmor(GetConVar("ttt_hanfei_armor"):GetInt())
 
-        -- Give the player set the life value
+		-- Give the player set the life value
 		ply:SetHealth(GetConVar("ttt_hanfei_hp"):GetInt())
 	end
 
