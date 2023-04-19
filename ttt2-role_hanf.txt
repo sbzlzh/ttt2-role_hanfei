@@ -14,7 +14,7 @@ The Middle East Bandit is a traitor without a shop,but he carries an AK , C4 and
 	[*][URL=https://steamcommunity.com/sharedfiles/filedetails/?id=2605759027]Swapper[/URL]
         [*][URL=https://steamcommunity.com/sharedfiles/filedetails/?id=2220740853]Medic[/URL]
         [*][URL=https://steamcommunity.com/sharedfiles/filedetails/?id=1392362130]Jackal[/URL]
-        [*][URL=https://steamcommunity.com/sharedfiles/filedetails/?id=1457185541]Unknown[/URL]
+        [*][URL=https://steamcommunity.com/sharedfiles/filedetails/?id=1883650244]Necromancer[/URL]
 [/list]
 
 [img]https://i.imgur.com/jIBWtbM.png[/img]
@@ -29,9 +29,10 @@ Convars are variables that are introduced to allow server owners to customize th
 # the limit of players that spawn as this role each round, this overwrites the percentage
   ttt_hanfei_max [0..n] (default: 1)
 # the probability each round of this role being spawned at all
-  ttt_hanfei_random [0..100] (default: 70)
+  ttt_hanfei_random [0..100] (default: 50)
 # the amount of players needed for this role to spawn
-  ttt_hanfei_min_players: [0..n] (default: 8)[/code]
+  ttt_hanfei_min_players: [0..n] (default: 8)
+[/code]
 
 [h1]Rolespecific Convars:[/h1]
 [code]
@@ -41,6 +42,9 @@ Convars are variables that are introduced to allow server owners to customize th
   ttt_hanfei_armor [0..150] (default: 50)
 # Automatic expose time setting of the Middle East Bandit
   ttt_hanfei_exposetime [0..600] (default: 60 seconds)[/code]
-
 [h1]Credits:[/h1]
-[URL=https://steamcommunity.com/sharedfiles/filedetails/?id=2844217799]Ak47 wepaon resource[/URL]: designe of the role weapon
+[URL=https://steamcommunity.com/profiles/76561197990533517]sogou[/URL]: original creator of this role addon
+[URL=https://steamcommunity.com/profiles/76561198444795757/]波と一緒に漂う[/URL]: Improvements and optimizations to character addon
+[URL=https://steamcommunity.com/id/sbzl9428]愚かなキツネ[/URL]: designer of the workshop/ingame role icon
+[URL=https://steamcommunity.com/id/zaratusa]Zaratusa[/URL]: The creator of the ooh-la-la sound when the character dies
+[URL=https://steamcommunity.com/sharedfiles/filedetails/?id=2844217799]AK47 wepaon[/URL]: designe of the role weapon
