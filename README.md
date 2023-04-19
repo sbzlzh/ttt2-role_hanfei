@@ -26,3 +26,13 @@ Besides the normal role convars found in ULX, there are these special convars:
 # Automatic expose time setting of the Middle East Bandit
   ttt_hanfei_exposetime [0..600] (default: 60 seconds)
 ```
+
+## Rolespecific Convars
+```
+# Initial HP setting of the Middle East Bandit
+  ttt_hanfei_hp [100..200] (default: 150)
+# Give the Middle East Bandit armor settings
+  ttt_hanfei_armor [0..150] (default: 50)
+# Automatic expose time setting of the Middle East Bandit
+  ttt_hanfei_exposetime [0..600] (default: 60 seconds)
+```
