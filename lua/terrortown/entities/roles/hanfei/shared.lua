@@ -92,7 +92,7 @@ if SERVER then
 		ply:GiveAmmo(90, "SMG1")
 
 		-- Give the player radar equipment
-		--ply:GiveEquipmentItem("item_ttt_radar")
+		-- ply:GiveEquipmentItem("item_ttt_radar")
 
 		-- Give the player armor and set the life value
 		ply:GiveArmor(GetConVar("ttt_hanfei_armor"):GetInt())
@@ -120,30 +120,32 @@ if SERVER then
 			local flag = false
 			local hanfei_players = ""
 
-			-- Check if there is a Hanfei character in the game
+			-- Check if there is a Hanfei ROLE in the game
 			for k, v in ipairs(player.GetAll()) do
-				if v:GetSubRole() == ROLE_HANFEI then
+				if v:GetSubRole() == ROLE_HANFEI and v:Alive() then
 					flag = true
 					v.expose = true
 					-- Used to customize the role model, when automatically exposed will become the set model, if not set is the default model
-					--v:SetModel("models/cso2/pm/hasanpm.mdl")
+					-- v:SetModel("models/cso2/pm/hasanpm.mdl")
 					hanfei_players = hanfei_players .. v:Nick() .. ", "
 				end
 			end
 
-			-- If there is a Hanfei character, notify all players
+			-- If there is a Hanfei ROLE, notify all players
 			if flag then
 				hanfei_players = string.sub(hanfei_players, 1, -3) -- remove the last comma and space
 
 				-- Send the message three times
 				for i = 1, 3 do
-					local info = LANG.MsgAll("ttt2_hanfei_chat_reveal", { playername = hanfei_players }, MSG_CHAT_WARN)
+					local info = LANG.MsgAll("ttt2_hanfei_chat_reveal", {
+						playername = hanfei_players
+					}, MSG_CHAT_WARN)
 				end
 			end
 		end)
 	end)
 
-	-- Remove the player's equipment and weapons when the character changes or respawns
+	-- Remove the player's equipment and weapons when the ROLE changes or respawns
 	function ROLE:RemoveRoleLoadout(ply, isRoleChange)
 		if isRoleChange then
 			-- Removes the player's equipment and weapons
