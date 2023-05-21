@@ -17,7 +17,7 @@ function ROLE:PreInitialize()
 	self.defaultTeam = TEAM_TRAITOR
 	self.defaultEquipment = SPECIAL_EQUIPMENT
 
-	self.preventFindCredits = true
+	self.preventFindCredits = false
 	self.isOmniscientRole = true
 
 	self.conVarData = {
@@ -29,7 +29,8 @@ function ROLE:PreInitialize()
 		togglable = true,
 		credits = 2,
 		creditsAwardDeadEnable = 1,
-		creditsAwardKillEnable = 1
+		creditsAwardKillEnable = 1,
+		shopFallback = nil
 	}
 end
 
