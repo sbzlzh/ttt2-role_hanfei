@@ -18,7 +18,7 @@ function ROLE:PreInitialize()
 	self.defaultEquipment = SPECIAL_EQUIPMENT
 
 	self.preventFindCredits = true
-    self.isOmniscientRole = true
+	self.isOmniscientRole = true
 
 	self.conVarData = {
 		pct = 0.13,
@@ -151,17 +151,17 @@ if SERVER then
 		if isRoleChange then
 			-- Removes the player's equipment and weapons
 			-- Remove AK57 if the player has one
-			if ply:HasWeapon("weapon_ttt_ak57") then
+			--[[if ply:HasWeapon("weapon_ttt_ak57") then
 				ply:RemoveEquipmentWeapon("weapon_ttt_ak57")
 			end
 
 			-- If player has C4, remove C4
 			if ply:HasWeapon("weapon_ttt_c4") then
 				ply:RemoveEquipmentWeapon("weapon_ttt_c4")
-			end
-
+			end--]]
 			-- Remove the player's armor
-			ply:RemoveArmor(GetConVar("ttt_hanfei_armor"):GetInt()) -- Note: there is an error in your original code, it should be "ttt_hanfei_armor" not "ttt_hanfei_armor"
+			-- Note: there is an error in your original code, it should be "ttt_hanfei_armor" not "ttt_hanfei_armor"
+			ply:RemoveArmor(GetConVar("ttt_hanfei_armor"):GetInt())
 		end
 	end
 end
