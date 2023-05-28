@@ -41,8 +41,8 @@ end
 -- hanfei_Explode function creates an explosion that deals damage within a specified range
 local function hanfei_Explode(ply, pos)
 	local DMG_EXPLOSION = 350
-	local R_INNER = 480
-	local R_OUTER = R_INNER * 1.18
+	local R_INNER = 520
+	local R_OUTER = R_INNER * 1.16
 
 	-- Create and set explosion effect data
 	local effect = EffectData()
@@ -110,6 +110,10 @@ if SERVER then
 			timer.Simple(2.05, function()
 				hanfei_Explode(victim, pos)
 			end)
+
+			local info = LANG.MsgAll("ttt2_hanfei_chat_exposetime", {
+				playername = victim:Nick()
+			}, MSG_CHAT_WARN)
 
 			victim:EmitSound("weapons/hanfei/jihad.wav", math.random(100, 150), math.random(95, 105))
 		end
