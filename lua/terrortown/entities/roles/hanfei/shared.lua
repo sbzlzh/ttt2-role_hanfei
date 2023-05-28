@@ -158,12 +158,13 @@ if SERVER then
 			-- Remove AK57 if the player has one
 			--[[if ply:HasWeapon("weapon_ttt_ak57") then
 				ply:RemoveEquipmentWeapon("weapon_ttt_ak57")
-			end
+			end--]]
 
 			-- If player has C4, remove C4
 			if ply:HasWeapon("weapon_ttt_c4") then
 				ply:RemoveEquipmentWeapon("weapon_ttt_c4")
-			end--]]
+			end
+
 			-- Remove the player's armor
 			-- Note: there is an error in your original code, it should be "ttt_hanfei_armor" not "ttt_hanfei_armor"
 			ply:RemoveArmor(GetConVar("ttt_hanfei_armor"):GetInt())
