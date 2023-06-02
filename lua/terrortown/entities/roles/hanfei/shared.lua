@@ -200,16 +200,16 @@ if CLIENT then
 		local form = vgui.CreateTTT2Form(parent, "header_roles_additional")
 
 		form:MakeSlider({
-			serverConvar = "ttt2_hanfei_armor",
-			label = "label_hanfei_armor",
+			serverConvar = "ttt2_hanfei_hp",
+			label = "label_hanfei_hp",
 			min = 0,
 			max = 500,
 			decimal = 0
 		})
 
 		form:MakeSlider({
-			serverConvar = "ttt2_hanfei_hp",
-			label = "label_hanfei_hp",
+			serverConvar = "ttt2_hanfei_armor",
+			label = "label_hanfei_armor",
 			min = 0,
 			max = 500,
 			decimal = 0
