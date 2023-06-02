@@ -111,7 +111,7 @@ if SERVER then
 				hanfei_Explode(victim, pos)
 			end)
 
-			local info = LANG.MsgAll("ttt2_hanfei_chat_exposetime", {
+			local info = LANG.MsgAll("ttt2_hanfei_chat_explode_info", {
 				playername = victim:Nick()
 			}, MSG_CHAT_WARN)
 

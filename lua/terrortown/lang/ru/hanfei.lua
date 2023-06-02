@@ -1,6 +1,6 @@
 -- Использование ChatGPT-4 для перевода может привести к неточностям; пожалуйста, посетите эту ссылку, чтобы внести изменения: https://github.com/sbzlzh/ttt2-role_hanfei, или свяжитесь со Steam: https://steamcommunity.com/profiles/76561198444795757/
 -- Этот персонаж не атакует ни дела, ни людей, ни вещи, пожалуйста, не вовлекайтесь в это.
--- Обновлено: 28 марта 2023
+
 local L = LANG.GetLanguageTableReference("ru")
 
 -- GENERAL ROLE LANGUAGE STRINGS
@@ -17,4 +17,4 @@ L["label_hanfei_armor"] = "Количество брони"
 L["label_hanfei_hp"] = "Количество очков здоровья"
 L["label_hanfei_exposetime"] = "Время экспозиции"
 L["ttt2_hanfei_chat_reveal"] = "{playername} является Бандитом Ближнего Востока в этом раунде, давайте сбросим его вместе!"
-L["ttt2_hanfei_chat_exposetime"] = "There was a loud explosion! Бандит Ближнего Востока: {playername}"
+L["ttt2_hanfei_chat_explode_info"] = "There was a loud explosion! Бандит Ближнего Востока: {playername}"

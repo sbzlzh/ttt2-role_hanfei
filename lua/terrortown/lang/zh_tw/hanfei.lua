@@ -1,6 +1,6 @@
 -- 使用chatgpt-4翻譯，可能會翻譯不正確，請到此鏈接更改：https://github.com/sbzlzh/ttt2-role_hanfei ，或聯繫steam：https://steamcommunity.com/profiles/76561198444795757/
 -- 該角色並沒有什麼事、人、物進行任何攻擊，請不要帶入其中
--- 更新時間：2023年3月28日
+
 local L = LANG.GetLanguageTableReference("zh_tw")
 
 -- GENERAL ROLE LANGUAGE STRINGS
@@ -17,4 +17,4 @@ L["label_hanfei_armor"] = "護甲數量"
 L["label_hanfei_hp"] = "生命值數量"
 L["label_hanfei_exposetime"] = "暴露的時間"
 L["ttt2_hanfei_chat_reveal"] = "{playername} 是本局悍匪，大家一起幹翻他！"
-L["ttt2_hanfei_chat_exposetime"] = "發出了一聲巨大的爆炸聲！中東悍匪：{playername}"
+L["ttt2_hanfei_chat_explode_info"] = "發出了一聲巨大的爆炸聲！中東悍匪：{playername}"

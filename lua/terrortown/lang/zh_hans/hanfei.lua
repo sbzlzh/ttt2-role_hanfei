@@ -1,5 +1,5 @@
 -- 该角色并没有对事,人,物进行任何攻击,请不要带入其中。
--- 更新时间: 2023年3月28日
+
 local L = LANG.GetLanguageTableReference("zh_hans")
 
 -- GENERAL ROLE LANGUAGE STRINGS
@@ -16,4 +16,4 @@ L["label_hanfei_armor"] = "护甲数量"
 L["label_hanfei_hp"] = "生命值数量"
 L["label_hanfei_exposetime"] = "暴露的时间"
 L["ttt2_hanfei_chat_reveal"] = "{playername} 是本局悍匪，大家一起干翻他！"
-L["ttt2_hanfei_chat_exposetime"] = "发出了一声巨大的爆炸声！悍匪：{playername}"
+L["ttt2_hanfei_chat_explode_info"] = "发出了一声巨大的爆炸声！悍匪：{playername}"

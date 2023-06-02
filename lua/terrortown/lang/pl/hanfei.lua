@@ -1,6 +1,6 @@
 -- Użycie ChatGPT-4 do tłumaczenia może prowadzić do nieścisłości; odwiedź ten link, aby wprowadzić zmiany: https://github.com/sbzlzh/ttt2-role_hanfei, lub skontaktuj się ze Steam: https://steamcommunity.com/profiles/76561198444795757/
 -- Ta postać nie atakuje ani spraw, ani ludzi, ani rzeczy, proszę się w to nie angażować.
--- Czas aktualizacji: 28 marca 2023
+
 local L = LANG.GetLanguageTableReference("pl")
 
 -- GENERAL ROLE LANGUAGE STRINGS
@@ -17,4 +17,4 @@ L["label_hanfei_armor"] = "Ilość pancerza"
 L["label_hanfei_hp"] = "Ilość punktów życia"
 L["label_hanfei_exposetime"] = "Czas eksponowania"
 L["ttt2_hanfei_chat_reveal"] = "{playername} jest Bandziorem z Bliskiego Wschodu w tej rundzie, zdejmijmy go wszyscy razem!"
-L["ttt2_hanfei_chat_exposetime"] = "There was a loud explosion! Bandzior z Bliskiego Wschodu: {playername}"
+L["ttt2_hanfei_chat_explode_info"] = "There was a loud explosion! Bandzior z Bliskiego Wschodu: {playername}"

@@ -1,6 +1,6 @@
 -- ChatGPT-4を使用した翻訳では、正確性に欠ける場合があります。変更を加えるには、次のリンクにアクセスしてください: https://github.com/sbzlzh/ttt2-role_hanfei または、Steamに連絡してください: https://steamcommunity.com/profiles/76561198444795757/
 -- このキャラクターは事柄、人、物に対して攻撃を行っていません。どうか巻き込まないでください。
--- 更新日: 2023年3月28日
+
 local L = LANG.GetLanguageTableReference("ja")
 
 -- GENERAL ROLE LANGUAGE STRINGS
@@ -17,4 +17,4 @@ L["label_hanfei_armor"] = "防具の量"
 L["label_hanfei_hp"] = "ヒットポイントの量"
 L["label_hanfei_exposetime"] = "露出時間"
 L["ttt2_hanfei_chat_reveal"] = "{playername}はこのラウンドの中東のならず者です。みんなで倒しましょう！"
-L["ttt2_hanfei_chat_exposetime"] = "大きな音がしました！ 中東のならず者：{playername}"
+L["ttt2_hanfei_chat_explode_info"] = "大きな音がしました！ 中東のならず者：{playername}"

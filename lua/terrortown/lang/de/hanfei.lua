@@ -1,6 +1,6 @@
 -- Die Verwendung von ChatGPT-4 für die Übersetzung kann zu Ungenauigkeiten führen; bitte besuchen Sie diesen Link, um Änderungen vorzunehmen: https://github.com/sbzlzh/ttt2-role_hanfei oder kontaktieren Sie Steam: https://steamcommunity.com/profiles/76561198444795757/
 -- Dieser Charakter greift weder Dinge noch Personen noch Objekte an. Bitte involvieren Sie sich nicht.
--- Aktualisierungszeit: 28. März 2023
+
 local L = LANG.GetLanguageTableReference("de")
 
 -- GENERAL ROLE LANGUAGE STRINGS
@@ -17,4 +17,4 @@ L["label_hanfei_armor"] = "Anzahl der Rüstung"
 L["label_hanfei_hp"] = "Anzahl der Lebenspunkte"
 L["label_hanfei_exposetime"] = "Zeit der Enttarnung"
 L["ttt2_hanfei_chat_reveal"] = "{playername} ist der Nahost-Bandit in dieser Runde, lasst uns ihn gemeinsam besiegen!"
-L["ttt2_hanfei_chat_exposetime"] = "There was a loud explosion! Nahost-Bandit: {playername}"
+L["ttt2_hanfei_chat_explode_info"] = "There was a loud explosion! Nahost-Bandit: {playername}"

@@ -1,6 +1,6 @@
 -- L'utilizzo di ChatGPT-4 per la traduzione potrebbe comportare imprecisioni; visita questo link per apportare modifiche: https://github.com/sbzlzh/ttt2-role_hanfei, o contatta Steam: https://steamcommunity.com/profiles/76561198444795757/
 -- Questo personaggio non attacca né fatti, né persone, né oggetti, per favore non coinvolgerti.
--- Data di aggiornamento: 28 marzo 2023
+
 local L = LANG.GetLanguageTableReference("it")
 
 -- GENERAL ROLE LANGUAGE STRINGS
@@ -17,4 +17,4 @@ L["label_hanfei_armor"] = "Quantità di armatura"
 L["label_hanfei_hp"] = "Quantità di punti vita"
 L["label_hanfei_exposetime"] = "Tempo di esposizione"
 L["ttt2_hanfei_chat_reveal"] = "{playername} è il Bandito del Medio Oriente in questo turno, abbattiamolo tutti insieme!"
-L["ttt2_hanfei_chat_exposetime"] = "There was a loud explosion! Bandito del Medio Oriente: {playername}"
+L["ttt2_hanfei_chat_explode_info"] = "There was a loud explosion! Bandito del Medio Oriente: {playername}"
