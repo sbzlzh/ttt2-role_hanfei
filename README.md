@@ -12,21 +12,21 @@ Besides the normal role convars found in ULX, there are these special convars:
 
 ```
 # enable or disable this role
-  ttt2_hanfei_enabled [0/1] (default: 1)
+  ttt_hanfei_enabled [0/1] (default: 1)
 # the percentage of players that are spawned as this role
-  ttt2_hanfei_pct [0.0..1.0] (default: 0.13)
+  ttt_hanfei_pct [0.0..1.0] (default: 0.13)
 # the limit of players that spawn as this role each round, this overwrites the percentage
-  ttt2_hanfei_max [0..n] (default: 1)
+  ttt_hanfei_max [0..n] (default: 1)
 # the probability each round of this role being spawned at all
-  ttt2_hanfei_random [0..100] (default: 100)
+  ttt_hanfei_random [0..100] (default: 100)
 # the amount of players needed for this role to spawn
-  ttt2_hanfei_min_players: [0..n] (default: 8)
+  ttt_hanfei_min_players: [0..n] (default: 8)
 # Initial HP setting of the Middle East Bandit
-  ttt2_hanfei_hp [100..200] (default: 150)
+  ttt_hanfei_hp [100..200] (default: 150)
 # Give the Middle East Bandit armor settings
-  ttt2_hanfei_armor [0..150] (default: 100)
+  ttt_hanfei_armor [0..150] (default: 100)
 # Automatic expose time setting of the Middle East Bandit
-  ttt2_hanfei_exposetime [0..600] (default: 60 seconds)
+  ttt_hanfei_exposetime [0..600] (default: 60 seconds)
 ```
 
 ## Rolespecific Convars
