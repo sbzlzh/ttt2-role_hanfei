@@ -16,6 +16,6 @@ Rozpoczyna grę z C4, wysoką zbroją i AK. Po śmierci wywołuje dźwiękowy ef
 L["label_hanfei_armor"] = "Ilość pancerza"
 L["label_hanfei_hp"] = "Ilość punktów życia"
 L["label_hanfei_exposetime"] = "Czas eksponowania"
---L["label_hanfei_tracker_mode"] = "What type of tracking item should the Middle Eastern Bandit start with?"
+L["label_hanfei_tracker_mode"] = "Z jakim typem przedmiotu do śledzenia powinien zacząć Bandzior z Bliskiego Wschodu?"
 L["ttt2_hanfei_chat_reveal"] = "{playername} jest Bandziorem z Bliskiego Wschodu w tej rundzie, zdejmijmy go wszyscy razem!"
 L["ttt2_hanfei_chat_explode_info"] = "There was a loud explosion! Bandzior z Bliskiego Wschodu: {playername}"

@@ -16,6 +16,6 @@ L["ttt2_desc_" .. HANFEI.name] = [[Это мощный предатель!
 L["label_hanfei_armor"] = "Количество брони"
 L["label_hanfei_hp"] = "Количество очков здоровья"
 L["label_hanfei_exposetime"] = "Время экспозиции"
---L["label_hanfei_tracker_mode"] = "What type of tracking item should the Middle Eastern Bandit start with?"
+L["label_hanfei_tracker_mode"] = "С каким типом отслеживающего элемента должен начать бандит из Ближнего Востока?"
 L["ttt2_hanfei_chat_reveal"] = "{playername} является Бандитом Ближнего Востока в этом раунде, давайте сбросим его вместе!"
 L["ttt2_hanfei_chat_explode_info"] = "There was a loud explosion! Бандит Ближнего Востока: {playername}"

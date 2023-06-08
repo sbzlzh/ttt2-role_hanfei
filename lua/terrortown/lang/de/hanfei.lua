@@ -16,6 +16,6 @@ Er beginnt das Spiel mit einer C4, hoher Rüstung und einer AK. Stirbt er, wird 
 L["label_hanfei_armor"] = "Anzahl der Rüstung"
 L["label_hanfei_hp"] = "Anzahl der Lebenspunkte"
 L["label_hanfei_exposetime"] = "Zeit der Enttarnung"
---L["label_hanfei_tracker_mode"] = "What type of tracking item should the Middle Eastern Bandit start with?"
+L["label_hanfei_tracker_mode"] = "Mit welcher Art von Verfolgungsgegenstand sollte der Bandit aus dem Nahen Osten beginnen?"
 L["ttt2_hanfei_chat_reveal"] = "{playername} ist der Nahost-Bandit in dieser Runde, lasst uns ihn gemeinsam besiegen!"
 L["ttt2_hanfei_chat_explode_info"] = "There was a loud explosion! Nahost-Bandit: {playername}"

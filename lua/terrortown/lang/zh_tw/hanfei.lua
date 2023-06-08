@@ -16,6 +16,6 @@ L["ttt2_desc_" .. HANFEI.name] = [[這是一個強勁的叛徒！
 L["label_hanfei_armor"] = "護甲數量"
 L["label_hanfei_hp"] = "生命值數量"
 L["label_hanfei_exposetime"] = "暴露的時間"
-L["label_hanfei_tracker_mode"] = "中東悍匪應該從哪種類型的跟踪項目開始？"
+L["label_hanfei_tracker_mode"] = "中東悍匪應該從哪種追蹤項目開始？"
 L["ttt2_hanfei_chat_reveal"] = "{playername} 是本局悍匪，大家一起幹翻他！"
 L["ttt2_hanfei_chat_explode_info"] = "發出了一聲巨大的爆炸聲！中東悍匪：{playername}"
