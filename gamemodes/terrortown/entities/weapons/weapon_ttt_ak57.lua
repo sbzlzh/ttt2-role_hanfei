@@ -1,6 +1,5 @@
 if SERVER then
 	AddCSLuaFile()
-
 	AddCSLuaFile("autorun/aksound.lua")
 end
 
@@ -128,7 +127,7 @@ end
 
 function SWEP:ApplyOffset(pos, ang)
 	pos = pos + ang:Forward() * self.Offset.Pos.Forward + ang:Right() * self.Offset.Pos.Right +
-		ang:Up() * self.Offset.Pos.Up
+			ang:Up() * self.Offset.Pos.Up
 
 	ang:RotateAroundAxis(ang:Up(), self.Offset.Ang.Up)
 	ang:RotateAroundAxis(ang:Right(), self.Offset.Ang.Right)
