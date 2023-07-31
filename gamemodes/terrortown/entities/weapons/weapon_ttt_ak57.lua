@@ -1,20 +1,20 @@
 if SERVER then
-	AddCSLuaFile()
-	AddCSLuaFile("autorun/aksound.lua")
+    AddCSLuaFile()
+    AddCSLuaFile("autorun/aksound.lua")
 end
 
 if CLIENT then
-	SWEP.PrintName = "Ak-47"
-	SWEP.Slot = 6
-	SWEP.Icon = "vgui/ttt/ak47_icon"
-	SWEP.ViewModelFlip = false
-	SWEP.ViewModelFOV = 75
-	SWEP.DrawCrosshair = false
+    SWEP.PrintName = "Ak-47"
+    SWEP.Slot = 6
+    SWEP.Icon = "vgui/ttt/ak47_icon"
+    SWEP.ViewModelFlip = false
+    SWEP.ViewModelFOV = 75
+    SWEP.DrawCrosshair = false
 
-	SWEP.EquipMenuData = {
-		type = "item_weapon",
-		desc = "Hanfei's weapon"
-	}
+    SWEP.EquipMenuData = {
+        type = "item_weapon",
+        desc = "Hanfei's weapon"
+    }
 end
 
 SWEP.Gun                 = ("weapon_ttt_ak57")
@@ -54,84 +54,84 @@ SWEP.RunSightsPos        = Vector(5.26, -6.123, -0.514) --These are for the angl
 SWEP.RunSightsAng        = Vector(-19.5, 63.31, -19.584)
 
 SWEP.WElements           = {
-	["ak_47"] = {
-		type = "Model",
-		model = "models/weapons/w_irq_ak47.mdl",
-		bone = "ValveBiped.Bip01_R_Hand",
-		rel = "",
-		pos = Vector(2.325, 0.717, 0.347),
-		angle = Angle(-2.712, -3.168, -180),
-		size = Vector(1, 1, 1),
-		color = Color(255, 255, 255, 255),
-		surpresslightning = false,
-		material = "",
-		skin = 0,
-		bodygroup = {}
-	}
+    ["ak_47"] = {
+        type = "Model",
+        model = "models/weapons/w_irq_ak47.mdl",
+        bone = "ValveBiped.Bip01_R_Hand",
+        rel = "",
+        pos = Vector(2.325, 0.717, 0.347),
+        angle = Angle(-2.712, -3.168, -180),
+        size = Vector(1, 1, 1),
+        color = Color(255, 255, 255, 255),
+        surpresslightning = false,
+        material = "",
+        skin = 0,
+        bodygroup = {}
+    }
 }
 
 if CLIENT then
-	-- Text shown in the equip menu
-	SWEP.EquipMenuData = {
-		type = "Weapon",
-		desc = "The Infamous Ak-47 .\n\nA Strong and fast rifle."
-	}
+    -- Text shown in the equip menu
+    SWEP.EquipMenuData = {
+        type = "Weapon",
+        desc = "The Infamous Ak-47 .\n\nA Strong and fast rifle."
+    }
 end
 
 SWEP.Offset = {
-	Pos = {
-		Up = 0,
-		Right = 1,
-		Forward = -2,
-	},
-	Ang = {
-		Up = 0,
-		Right = 355,
-		Forward = 180,
-	}
+    Pos = {
+        Up = 0,
+        Right = 1,
+        Forward = -2,
+    },
+    Ang = {
+        Up = 0,
+        Right = 355,
+        Forward = 180,
+    }
 }
 
 function SWEP:Reload()
-	if (self:Clip1() == self.Primary.ClipSize or self:GetOwner():GetAmmoCount(self.Primary.Ammo) <= 0) then return end
-	self:DefaultReload(ACT_VM_RELOAD)
-	self:SetIronsights(false)
-	self:SetZoom(false)
+    if (self:Clip1() == self.Primary.ClipSize or self:GetOwner():GetAmmoCount(self.Primary.Ammo) <= 0) then return end
+    self:DefaultReload(ACT_VM_RELOAD)
+    self:SetIronsights(false)
+    self:SetZoom(false)
 end
 
 function SWEP:OnDrop()
-	--self:Remove()
+    --self:Remove()
 end
 
 function SWEP:DrawWorldModel()
-	local hand, offset, rotate
+    local hand, offset, rotate
 
-	local pl = self:GetOwner()
+    local pl = self:GetOwner()
 
-	if IsValid(pl) then
-		local boneIndex = pl:LookupBone("ValveBiped.Bip01_R_Hand")
-		if boneIndex then
-			local pos, ang = pl:GetBonePosition(boneIndex)
+    if IsValid(pl) then
+        local boneIndex = pl:LookupBone("ValveBiped.Bip01_R_Hand")
+        if boneIndex then
+            local pos, ang = pl:GetBonePosition(boneIndex)
 
-			pos, ang = self:ApplyOffset(pos, ang)
+            pos, ang = self:ApplyOffset(pos, ang)
 
-			self:SetRenderOrigin(pos)
-			self:SetRenderAngles(ang)
-			self:DrawModel()
-		end
-	else
-		self:SetRenderOrigin(nil)
-		self:SetRenderAngles(nil)
-		self:DrawModel()
-	end
+            self:SetRenderOrigin(pos)
+            self:SetRenderAngles(ang)
+            self:DrawModel()
+        end
+    else
+        self:SetRenderOrigin(nil)
+        self:SetRenderAngles(nil)
+        self:DrawModel()
+    end
 end
 
 function SWEP:ApplyOffset(pos, ang)
-	pos = pos + ang:Forward() * self.Offset.Pos.Forward + ang:Right() * self.Offset.Pos.Right +
-		ang:Up() * self.Offset.Pos.Up
+    pos = pos + ang:Forward() * self.Offset.Pos.Forward + ang:Right() * self.Offset.Pos.Right +
+        ang:Up() * self.Offset.Pos.Up
 
-	ang:RotateAroundAxis(ang:Up(), self.Offset.Ang.Up)
-	ang:RotateAroundAxis(ang:Right(), self.Offset.Ang.Right)
-	ang:RotateAroundAxis(ang:Forward(), self.Offset.Ang.Forward)
+    ang:RotateAroundAxis(ang:Up(), self.Offset.Ang.Up)
+    ang:RotateAroundAxis(ang:Right(), self.Offset.Ang.Right)
+    ang:RotateAroundAxis(ang:Forward(), self.Offset.Ang.Forward)
 
-	return pos, ang
+    return pos, ang
 end
