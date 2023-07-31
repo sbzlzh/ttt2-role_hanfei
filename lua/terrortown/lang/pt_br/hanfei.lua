@@ -16,6 +16,6 @@ Ele começa o jogo com um C4, alta armadura e um AK. Ao morrer, ele aciona um ef
 L["label_hanfei_armor"] = "Quantidade de armadura"
 L["label_hanfei_hp"] = "Quantidade de pontos de vida"
 L["label_hanfei_exposetime"] = "Tempo de exposição"
-L["label_hanfei_tracker_mode"] = "Com que tipo de item de rastreamento o Bandido do Oriente Médio deveria começar?"
+--L["label_hanfei_tracker_mode"] = "What type of tracking item should the Middle Eastern Bandit start with?"
 L["ttt2_hanfei_chat_reveal"] = "{playername} é o Bandido do Oriente Médio nesta rodada, vamos derrubá-lo juntos!"
 L["ttt2_hanfei_chat_explode_info"] = "There was a loud explosion! Bandido do Oriente Médio: {playername}"
