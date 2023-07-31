@@ -103,36 +103,35 @@ function SWEP:OnDrop()
 end
 
 function SWEP:DrawWorldModel()
-	local hand, offset, rotate
+    local hand, offset, rotate
 
-	local pl = self:GetOwner()
+    local pl = self:GetOwner()
 
-	if IsValid(pl) then
-		local boneIndex = pl:LookupBone("ValveBiped.Bip01_R_Hand")
-		if boneIndex then
-			local pos, ang = pl:GetBonePosition(boneIndex)
+    if IsValid(pl) then
+        local boneIndex = pl:LookupBone("ValveBiped.Bip01_R_Hand")
+        if boneIndex then
+            local pos, ang = pl:GetBonePosition(boneIndex)
 
-			pos, ang = self:ApplyOffset(pos, ang)
+            pos, ang = self:ApplyOffset(pos, ang)
 
-			self:SetRenderOrigin(pos)
-			self:SetRenderAngles(ang)
-			self:DrawModel()
-		end
-	else
-		self:SetRenderOrigin(nil)
-		self:SetRenderAngles(nil)
-		self:DrawModel()
-	end
+            self:SetRenderOrigin(pos)
+            self:SetRenderAngles(ang)
+            self:DrawModel()
+        end
+    else
+        self:SetRenderOrigin(nil)
+        self:SetRenderAngles(nil)
+        self:DrawModel()
+    end
 end
 
 function SWEP:ApplyOffset(pos, ang)
-	pos = pos + ang:Forward() * self.Offset.Pos.Forward + ang:Right() * self.Offset.Pos.Right +
-			ang:Up() * self.Offset.Pos.Up
+    pos = pos + ang:Forward() * self.Offset.Pos.Forward + ang:Right() * self.Offset.Pos.Right +
+        ang:Up() * self.Offset.Pos.Up
 
-	ang:RotateAroundAxis(ang:Up(), self.Offset.Ang.Up)
-	ang:RotateAroundAxis(ang:Right(), self.Offset.Ang.Right)
-	ang:RotateAroundAxis(ang:Forward(), self.Offset.Ang.Forward)
+    ang:RotateAroundAxis(ang:Up(), self.Offset.Ang.Up)
+    ang:RotateAroundAxis(ang:Right(), self.Offset.Ang.Right)
+    ang:RotateAroundAxis(ang:Forward(), self.Offset.Ang.Forward)
 
-	return pos, ang
+    return pos, ang
 end
-
