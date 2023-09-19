@@ -93,13 +93,14 @@ SWEP.Offset = {
 
 function SWEP:Reload()
     if (self:Clip1() == self.Primary.ClipSize or self:GetOwner():GetAmmoCount(self.Primary.Ammo) <= 0) then return end
+
     self:DefaultReload(ACT_VM_RELOAD)
     self:SetIronsights(false)
     self:SetZoom(false)
 end
 
 function SWEP:OnDrop()
-    --self:Remove()
+    self:Remove()
 end
 
 function SWEP:DrawWorldModel()
@@ -126,8 +127,7 @@ function SWEP:DrawWorldModel()
 end
 
 function SWEP:ApplyOffset(pos, ang)
-    pos = pos + ang:Forward() * self.Offset.Pos.Forward + ang:Right() * self.Offset.Pos.Right +
-        ang:Up() * self.Offset.Pos.Up
+    pos = pos + ang:Forward() * self.Offset.Pos.Forward + ang:Right() * self.Offset.Pos.Right + ang:Up() * self.Offset.Pos.Up
 
     ang:RotateAroundAxis(ang:Up(), self.Offset.Ang.Up)
     ang:RotateAroundAxis(ang:Right(), self.Offset.Ang.Right)

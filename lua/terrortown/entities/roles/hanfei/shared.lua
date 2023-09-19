@@ -1,5 +1,6 @@
 if SERVER then
     AddCSLuaFile()
+
     resource.AddFile("materials/vgui/ttt/dynamic/roles/icon_hanf.vmt")
 end
 
@@ -37,8 +38,10 @@ function ROLE:Initialize()
     roles.SetBaseRole(self, ROLE_TRAITOR)
 end
 
--- hanfei_Explode function creates an explosion that deals damage within a specified range
-local function hanfei_Explode(ply, pos)
+-- hanfei_explode function creates an explosion that deals damage within a specified range
+local function hanfei_explode(ply, pos)
+    if not IsValid(ply) then return end
+
     local DMG_EXPLOSION = 350
     local R_INNER = 520
     local R_OUTER = R_INNER * 1.15
@@ -59,7 +62,7 @@ local function hanfei_Explode(ply, pos)
 
     for _, ent in ipairs(entities) do
         -- If the entity is a player and not on the same team as the player who triggered the explosion
-        if ent:IsPlayer() and ent:GetTeam() ~= ply:GetTeam() then
+        if IsValid(ent) and ent:IsPlayer() and ent:GetTeam() ~= ply:GetTeam() then
             -- Calculate distance and damage
             local distance = pos:Distance(ent:GetPos())
             local damage = DMG_EXPLOSION * (1 - (distance / R_OUTER))
@@ -76,6 +79,36 @@ local function hanfei_Explode(ply, pos)
 end
 
 if SERVER then
+    -- Set the exposure time for the hanfei role at the start of each round
+    hook.Add("TTTBeginRound", "ttt2_hanfei_timer", function()
+        -- Get the exposure time from ConVar
+        timer.Simple(GetConVar("ttt2_hanfei_exposetime"):GetInt(), function()
+            local flag = false
+            local hanfei_players = ""
+
+            -- Check if there is a Hanfei ROLE in the game
+            for k, v in ipairs(player.GetAll()) do
+                if v:GetSubRole() == ROLE_HANFEI and v:Alive() then
+                    flag = true
+                    v.expose = true
+                    -- Used to customize the role model, when automatically exposed will become the set model, if not set is the default model
+                    -- v:SetModel("models/cso2/pm/hasanpm.mdl")
+                    hanfei_players = hanfei_players .. v:Nick() .. ", "
+                end
+            end
+
+            -- If there is a Hanfei ROLE, notify all players
+            if flag then
+                hanfei_players = string.sub(hanfei_players, 1, -3) -- remove the last comma and space
+
+                -- Send the message three times
+                for i = 1, 3 do
+                    local info = LANG.MsgAll("ttt2_hanfei_chat_reveal", { playername = hanfei_players }, MSG_CHAT_WARN)
+                end
+            end
+        end)
+    end)
+
     --CONSTANTS
     -- Enum for tracker mode
     local TRACKER_MODE = { NONE = 0, RADAR = 1, TRACKER = 2 }
@@ -113,55 +146,6 @@ if SERVER then
         ply:SetHealth(GetConVar("ttt2_hanfei_hp"):GetInt())
     end
 
-    hook.Add("PlayerDeath", "ttt2_hanfei_death", function(victim, inflictor, attacker)
-        if victim:GetSubRole() == ROLE_HANFEI then
-            local pos = victim:GetPos()
-
-            timer.Simple(2.05, function()
-                hanfei_Explode(victim, pos)
-            end)
-
-            local info = LANG.MsgAll("ttt2_hanfei_chat_explode_info", {
-                playername = victim:Nick()
-            }, MSG_CHAT_WARN)
-
-            victim:EmitSound("weapons/hanfei/jihad.wav", math.random(100, 150), math.random(95, 105))
-        end
-    end)
-
-    -- Set the exposure time for the hanfei role at the start of each round
-    hook.Add("TTTBeginRound", "ttt2_hanfei_timer", function()
-        -- Get the exposure time from ConVar
-        timer.Simple(GetConVar("ttt2_hanfei_exposetime"):GetInt(), function()
-            local flag = false
-            local hanfei_players = ""
-
-            -- Check if there is a Hanfei ROLE in the game
-            for k, v in ipairs(player.GetAll()) do
-                if v:GetSubRole() == ROLE_HANFEI and v:Alive() then
-                    flag = true
-                    v.expose = true
-                    -- Used to customize the role model, when automatically exposed will become the set model, if not set is the default model
-                    -- v:SetModel("models/cso2/pm/hasanpm.mdl")
-                    hanfei_players = hanfei_players .. v:Nick() .. ", "
-                end
-            end
-
-            -- If there is a Hanfei ROLE, notify all players
-            if flag then
-                hanfei_players = string.sub(hanfei_players, 1, -3) -- remove the last comma and space
-
-                -- Send the message three times
-                for i = 1, 3 do
-                    local info = LANG.MsgAll("ttt2_hanfei_chat_reveal", {
-                        playername = hanfei_players
-                    }, MSG_CHAT_WARN)
-                end
-            end
-        end)
-    end)
-
-    -- Remove the player's equipment and weapons when the ROLE changes or respawns
     function ROLE:RemoveRoleLoadout(ply, isRoleChange)
         if isRoleChange then
             -- Removes the player's equipment and weapons
@@ -181,17 +165,43 @@ if SERVER then
 			end--]]
 
             -- If player has tracker or radar, remove  tracker or radar
-            --[[if GetConVar("ttt2_hanfei_tracker_mode"):GetInt() == TRACKER_MODE.RADAR then
-				ply:RemoveEquipmentItem("item_ttt_radar")
-			elseif GetConVar("ttt2_hanfei_tracker_mode"):GetInt() == TRACKER_MODE.TRACKER then
-				ply:RemoveEquipmentItem("item_ttt_tracker")
-			end--]]
+            if GetConVar("ttt2_hanfei_tracker_mode"):GetInt() == TRACKER_MODE.RADAR then
+                ply:RemoveEquipmentItem("item_ttt_radar")
+            elseif GetConVar("ttt2_hanfei_tracker_mode"):GetInt() == TRACKER_MODE.TRACKER then
+                ply:RemoveEquipmentItem("item_ttt_tracker")
+            end
 
             -- Remove the player's armor
-            -- Note: there is an error in your original code, it should be "ttt_hanfei_armor" not "ttt_hanfei_armor"
+            -- Note: there is an error in your original code, it should be "ttt2_hanfei_armor" not "ttt2_hanfei_armor"
             ply:RemoveArmor(GetConVar("ttt2_hanfei_armor"):GetInt())
         end
     end
+
+    local function HanFeiForAlivePlayers(soundPath, volume, pitch)
+        for _, ply in pairs(player.GetAll()) do
+            if IsValid(ply) and ply:Alive() then
+                ply:EmitSound(soundPath, volume, math.random(pitch[1], pitch[2]))
+            end
+        end
+    end
+
+    hook.Add("PlayerDeath", "ttt2_hanfei_death", function(victim, inflictor, attacker)
+        if IsValid(victim) and victim:IsPlayer() and victim:GetSubRole() == ROLE_HANFEI then
+            local pos = victim:GetPos()
+
+            timer.Simple(2.05, function()
+                hanfei_explode(victim, pos)
+            end)
+
+            local info = LANG.MsgAll("ttt2_hanfei_chat_explode_info", { playername = victim:Nick() }, MSG_CHAT_WARN)
+
+            HanFeiForAlivePlayers("weapons/hanfei/jihad.wav", 100, { 95, 105 })
+
+            if IsValid(victim) then
+                victim:EmitSound("weapons/hanfei/jihad.wav", 100, math.random(95, 105))
+            end
+        end
+    end)
 end
 
 if CLIENT then
