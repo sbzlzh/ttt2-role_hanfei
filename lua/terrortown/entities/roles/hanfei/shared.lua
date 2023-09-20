@@ -116,7 +116,7 @@ if SERVER then
     -- Adding loadout on role change/spawn
     function ROLE:GiveRoleLoadout(ply, isRoleChange)
         -- Assign equipment and weapons to the player
-        -- If player doesn't have AK57, give AK57
+        -- If player doesn't have ak47, give ak47
         if not ply:HasWeapon("weapon_ttt_hanf_ak47") then
             ply:GiveEquipmentWeapon("weapon_ttt_hanf_ak47")
         end
@@ -149,7 +149,7 @@ if SERVER then
     function ROLE:RemoveRoleLoadout(ply, isRoleChange)
         if isRoleChange then
             -- Removes the player's equipment and weapons
-            -- Remove AK57 if the player has one
+            -- Remove ak47 if the player has one
             --[[if ply:HasWeapon("weapon_ttt_hanf_ak47") then
 				ply:RemoveEquipmentWeapon("weapon_ttt_hanf_ak47")
 			end--]]
