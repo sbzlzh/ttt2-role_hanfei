@@ -117,13 +117,13 @@ if SERVER then
     function ROLE:GiveRoleLoadout(ply, isRoleChange)
         -- Assign equipment and weapons to the player
         -- If player doesn't have AK57, give AK57
-        if not ply:HasWeapon("weapon_ttt_ak57") then
-            ply:GiveEquipmentWeapon("weapon_ttt_ak57")
+        if not ply:HasWeapon("weapon_ttt_hanf_ak47") then
+            ply:GiveEquipmentWeapon("weapon_ttt_hanf_ak47")
         end
 
         -- If player does not have C4, give C4
-        if not ply:HasWeapon("weapon_ttt_c4") then
-            ply:GiveEquipmentWeapon("weapon_ttt_c4")
+        if not ply:HasWeapon("weapon_ttt_hanf_c4") then
+            ply:GiveEquipmentWeapon("weapon_ttt_hanf_c4")
         end
 
         -- Give the player extra ammo
@@ -150,13 +150,13 @@ if SERVER then
         if isRoleChange then
             -- Removes the player's equipment and weapons
             -- Remove AK57 if the player has one
-            --[[if ply:HasWeapon("weapon_ttt_ak57") then
-				ply:RemoveEquipmentWeapon("weapon_ttt_ak57")
+            --[[if ply:HasWeapon("weapon_ttt_hanf_ak47") then
+				ply:RemoveEquipmentWeapon("weapon_ttt_hanf_ak47")
 			end--]]
 
             -- If player has C4, remove C4
-            if ply:HasWeapon("weapon_ttt_c4") then
-                ply:RemoveEquipmentWeapon("weapon_ttt_c4")
+            if ply:HasWeapon("weapon_ttt_hanf_c4") then
+                ply:RemoveEquipmentWeapon("weapon_ttt_hanf_c4")
             end
 
             -- If player has kraber, remove kraber
