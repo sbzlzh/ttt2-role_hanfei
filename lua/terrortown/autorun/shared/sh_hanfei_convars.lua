@@ -34,10 +34,10 @@ hook.Add("TTTUlxDynamicRCVars", "ttt2_ulx_dynamic_hanfei_convars", function(tbl)
         desc = "ttt2_hanfei_exposetime (def. 60)"
     })
 
-    --  # What type of tracking item should the HanFei start with?
-    --  # 0: Han Fei does not spawn with a tracking device
-    --  # 1: Han Fei spawns with a radar (Reveals player positions every 30 seconds)
-    --  # 2: Han Fei spawns with a tracker (Reveals player positions constantly)
+    --  # What type of tracking item should the hanfei start with?
+    --  # 0: hanfei does not spawn with a tracking device
+    --  # 1: hanfei spawns with a radar (Reveals player positions every 30 seconds)
+    --  # 2: hanfei spawns with a tracker (Reveals player positions constantly)
     table.insert(tbl[ROLE_HANFEI], {
         cvar = "ttt2_hanfei_tracker_mode",
         combobox = true,
