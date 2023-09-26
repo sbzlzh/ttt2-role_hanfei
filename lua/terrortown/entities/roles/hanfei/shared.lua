@@ -21,13 +21,13 @@ function ROLE:PreInitialize()
     self.isOmniscientRole = true
 
     self.conVarData = {
-        pct = 0.13,
+        pct = 0.15,
         maximum = 1,
-        minPlayers = 8,
-        random = 60,
+        minPlayers = 7,
+        random = 30,
         traitorButton = 1,
         togglable = true,
-        credits = 1,
+        credits = 2,
         creditsAwardDeadEnable = 1,
         creditsAwardKillEnable = 1,
         shopFallback = nil
@@ -109,7 +109,7 @@ if SERVER then
         end)
     end)
 
-    --CONSTANTS
+    -- CONSTANTS
     -- Enum for tracker mode
     local TRACKER_MODE = { NONE = 0, RADAR = 1, TRACKER = 2 }
 
