@@ -3,7 +3,7 @@ AddCSLuaFile()
 SWEP.HoldType = "slam"
 
 if CLIENT then
-    SWEP.PrintName     = "C4"
+    SWEP.PrintName     = "Hanf'C4"
     SWEP.Slot          = 6
 
     SWEP.ViewModelFlip = false
@@ -13,7 +13,7 @@ if CLIENT then
     SWEP.EquipMenuData = {
         type = "item_weapon",
         name = "C4",
-        desc = "c4_desc"
+        desc = "Hanfei's C4"
     }
 
     SWEP.Icon          = "vgui/ttt/icon_c4"

@@ -1,11 +1,11 @@
 if SERVER then
     AddCSLuaFile()
 
-    AddCSLuaFile("autorun/aksound.lua")
+    AddCSLuaFile("autorun/ak47_sound.lua")
 end
 
 if CLIENT then
-    SWEP.PrintName = "Ak-47"
+    SWEP.PrintName = "Hanf'Ak47"
     SWEP.Slot = 6
     SWEP.Icon = "vgui/ttt/ak47_icon"
     SWEP.ViewModelFlip = false
@@ -14,7 +14,7 @@ if CLIENT then
     SWEP.UseHands = true
     SWEP.EquipMenuData = {
         type = "item_weapon",
-        desc = "Hanfei's weapon"
+        desc = "Hanfei's Ak47"
     }
 end
 
