@@ -159,6 +159,8 @@ if SERVER then
                 ply:RemoveEquipmentWeapon("weapon_ttt_hanf_c4")
             end
 
+            ply:RemoveAmmo(60, "SMG1")
+
             -- If player has kraber, remove kraber
             --[[if ply:HasWeapon("weapon_ttt_kraber") then
 				ply:RemoveEquipmentWeapon("weapon_ttt_kraber")

@@ -5,7 +5,7 @@ if SERVER then
 end
 
 if CLIENT then
-    SWEP.PrintName = "Hanf'Ak47"
+    SWEP.PrintName = "Hanf-Ak47"
     SWEP.Slot = 6
     SWEP.Icon = "vgui/ttt/ak47_icon"
     SWEP.ViewModelFlip = false
@@ -14,7 +14,7 @@ if CLIENT then
     SWEP.UseHands = true
     SWEP.EquipMenuData = {
         type = "item_weapon",
-        desc = "Hanfei's Ak47"
+        desc = "AK47 for Hanf"
     }
 end
 
@@ -90,14 +90,6 @@ SWEP.WElements           = {
         bodygroup = {}
     }
 }
-
-if CLIENT then
-    -- Text shown in the equip menu
-    SWEP.EquipMenuData = {
-        type = "Weapon",
-        desc = "The Infamous Ak-47 .\nA Strong and fast rifle."
-    }
-end
 
 SWEP.Offset = {
     Pos = {

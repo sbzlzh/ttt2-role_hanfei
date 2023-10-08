@@ -3,7 +3,7 @@ AddCSLuaFile()
 SWEP.HoldType = "slam"
 
 if CLIENT then
-    SWEP.PrintName     = "Hanf'C4"
+    SWEP.PrintName     = "Hanf-C4"
     SWEP.Slot          = 6
 
     SWEP.ViewModelFlip = false
@@ -12,8 +12,8 @@ if CLIENT then
 
     SWEP.EquipMenuData = {
         type = "item_weapon",
-        name = "C4",
-        desc = "Hanfei's C4"
+        name = "Hanf-C4",
+        desc = "C4 for Hanf"
     }
 
     SWEP.Icon          = "vgui/ttt/icon_c4"
@@ -70,7 +70,7 @@ function SWEP:BombDrop()
 
         local vthrow = vvel + vang * 200
 
-        local bomb = ents.Create("ttt_hanf_c4")
+        local bomb = ents.Create("ttt_c4")
         if IsValid(bomb) then
             bomb:SetPos(vsrc + vang * 10)
             bomb:SetOwner(ply)
@@ -116,7 +116,7 @@ function SWEP:BombStick()
         local tr = util.TraceLine({ start = spos, endpos = epos, filter = ignore, mask = MASK_SOLID })
 
         if tr.HitWorld then
-            local bomb = ents.Create("ttt_hanf_c4")
+            local bomb = ents.Create("ttt_c4")
             if IsValid(bomb) then
                 bomb:PointAtEntity(ply)
 
