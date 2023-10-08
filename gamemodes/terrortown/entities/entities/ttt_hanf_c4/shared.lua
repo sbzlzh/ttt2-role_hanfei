@@ -727,7 +727,7 @@ if SERVER then
                 end
 
                 -- picks up weapon, switches if possible and needed, returns weapon if successful
-                local wep = ply:SafePickupWeaponClass("weapon_ttt_c4", true)
+                local wep = ply:SafePickupWeaponClass("weapon_ttt_hanf_c4", true)
 
                 if not IsValid(wep) then
                     LANG.Msg(ply, "c4_no_room")
