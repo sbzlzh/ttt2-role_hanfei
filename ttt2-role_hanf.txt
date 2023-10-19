@@ -11,7 +11,7 @@ The Middle East Bandit is a traitor without a shop,but he carries an AK , C4 and
 
 [h1]Plays best with:[/h1]
 [list]
-	[*][URL=https://steamcommunity.com/sharedfiles/filedetails/?id=2605759027]Swapper[/URL]
+  [*][URL=https://steamcommunity.com/sharedfiles/filedetails/?id=2605759027]Swapper[/URL]
   [*][URL=https://steamcommunity.com/sharedfiles/filedetails/?id=2220740853]Medic[/URL]
   [*][URL=https://steamcommunity.com/sharedfiles/filedetails/?id=1392362130]Jackal[/URL]
   [*][URL=https://steamcommunity.com/sharedfiles/filedetails/?id=1883650244]Necromancer[/URL]
@@ -66,7 +66,7 @@ Source: [url=https://github.com/sbzlzh/ttt2-role_hanfei]https://github.com/sbzlz
 
 [h1]最佳搭档:[/h1]
 [list]
-	[*][URL=https://steamcommunity.com/sharedfiles/filedetails/?id=2605759027]Swapper[/URL]
+  [*][URL=https://steamcommunity.com/sharedfiles/filedetails/?id=2605759027]Swapper[/URL]
   [*][URL=https://steamcommunity.com/sharedfiles/filedetails/?id=2220740853]Medic[/URL]
   [*][URL=https://steamcommunity.com/sharedfiles/filedetails/?id=1392362130]Jackal[/URL]
   [*][URL=https://steamcommunity.com/sharedfiles/filedetails/?id=1883650244]Necromancer[/URL]
