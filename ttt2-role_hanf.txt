@@ -52,3 +52,58 @@ Convars are variables that are introduced to allow server owners to customize th
 [URL=https://steamcommunity.com/id/sbzl9428]愚かなキツネ[/URL]: designer of the workshop/ingame role icon
 [URL=https://steamcommunity.com/id/zaratusa]Zaratusa[/URL]: The creator of the ooh-la-la sound when the character dies
 [URL=https://steamcommunity.com/sharedfiles/filedetails/?id=2844217799]AK47 wepaon[/URL]: designe of the role weapon
+--------------------------------------------------------------------------------------------
+[i]你是强大的中东悍匪，尽情猎杀吧。[/i]
+
+为了使用该角色，需要使用[URL=https://steamcommunity.com/sharedfiles/filedetails/?id=1357204556]TTT2[/URL]。另外建议使用[URL=https://steamcommunity.com/sharedfiles/filedetails/?id=1362430347]TTT2 ULX[/URL]。报告有关此角色的错误 [URL=https://github.com/sbzlzh/ttt2-role_hanfei]这里[/URL] 和提交新角色的想法 [URL=https://github.com/TTT-2/addon-ideas]这里[/URL]。所有当前可用角色的列表可以在[URL=https://steamcommunity.com/sharedfiles/filedetails/?id=1737053146]这里[/URL]找到。
+
+Discord: [url=https://discord.gg/Npcbb4W]https://discord.gg/Npcbb4W[/url]
+Source: [url=https://github.com/sbzlzh/ttt2-role_hanfei]https://github.com/sbzlzh/ttt2-role_hanfei[/url]
+
+[img]https://i.imgur.com/KeP4fWN.png[/img]
+
+中东悍匪是一个没有商店的叛徒，但他携带着 AK、C4，并且有高血量和护甲。如果中东悍匪被杀死，将会造成一定范围内的自爆伤害。但他对自己的队友并不会有伤害.
+
+[h1]最佳搭档:[/h1]
+[list]
+	[*][URL=https://steamcommunity.com/sharedfiles/filedetails/?id=2605759027]Swapper[/URL]
+  [*][URL=https://steamcommunity.com/sharedfiles/filedetails/?id=2220740853]Medic[/URL]
+  [*][URL=https://steamcommunity.com/sharedfiles/filedetails/?id=1392362130]Jackal[/URL]
+  [*][URL=https://steamcommunity.com/sharedfiles/filedetails/?id=1883650244]Necromancer[/URL]
+[/list]
+
+[img]https://i.imgur.com/jIBWtbM.png[/img]
+
+Convars 是一种引入的变量，允许服务器所有者在不更改代码的情况下自定义游戏玩法。TTT2 自动创建了一些 convars，定义了此角色的生成参数，并在 ULX 中找到。此外，可能还有一些角色特定的 convars，必须在服务器配置文件中设置。
+
+[h1]角色设置（也可以在ULX中找到）：[/h1]
+[code]# 启用或禁用此角色
+  ttt_hanfei_enabled [0/1] (default: 1)
+# 作为此角色生成的玩家的百分比
+  ttt_hanfei_pct [0.0..1.0] (default: 0.15)
+# 每轮生成为此角色的玩家限制，此设置覆盖了百分比
+  ttt_hanfei_max [0..n] (default: 1)
+# 每轮生成此角色的概率
+  ttt_hanfei_random [0..100] (default: 30)
+# 生成此角色所需的最少玩家人数
+  ttt_hanfei_min_players: [0..n] (default: 7)
+[/code]
+
+[h1]角色特有设置:[/h1]
+[code]
+# 中东悍匪的初始HP设置
+  ttt2_hanfei_hp [100..200] (default: 150)
+# 给予中东悍匪护甲设置
+  ttt2_hanfei_armor [0..150] (default: 50)
+# 中东悍匪的自动暴露时间设置
+  ttt2_hanfei_exposetime [0..600] (default: 60 seconds)
+# 应该从哪种类型的跟踪器开始？0:无 1:雷达 2:追踪器
+  ttt2_hanfei_tracker_mode [0..2] (default: 0)
+[/code]
+
+[h1]学分:[/h1]
+[URL=https://steamcommunity.com/profiles/76561197990533517]sogou[/URL]: 最初始的想法者
+[URL=https://steamcommunity.com/profiles/76561198444795757/]波と一緒に漂う[/URL]: 对角色插件的改进和优化
+[URL=https://steamcommunity.com/id/sbzl9428]愚かなキツネ[/URL]: 车间/游戏角色图标的设计者
+[URL=https://steamcommunity.com/id/zaratusa]Zaratusa[/URL]: 角色死亡时呜啦啦的声音创造者
+[URL=https://steamcommunity.com/sharedfiles/filedetails/?id=2844217799]AK47 武器[/URL]: 角色武器
