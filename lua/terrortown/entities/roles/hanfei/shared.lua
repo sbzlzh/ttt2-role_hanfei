@@ -48,6 +48,7 @@ local function hanfei_explode(ply, pos)
 
     -- Create and set explosion effect data
     local effect = EffectData()
+
     effect:SetStart(pos)
     effect:SetOrigin(pos)
     effect:SetScale(R_OUTER)
@@ -66,9 +67,9 @@ local function hanfei_explode(ply, pos)
             -- Calculate distance and damage
             local distance = pos:Distance(ent:GetPos())
             local damage = DMG_EXPLOSION * (1 - (distance / R_OUTER))
-
             -- Deal damage to the player
             local dmginfo = DamageInfo()
+
             dmginfo:SetDamage(damage)
             dmginfo:SetAttacker(ply)
             dmginfo:SetInflictor(ply)

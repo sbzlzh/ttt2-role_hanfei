@@ -60,8 +60,8 @@ end
 function SWEP:BombDrop()
     if SERVER then
         local ply = self:GetOwner()
-        if not IsValid(ply) then return end
 
+        if not IsValid(ply) then return end
         if self.Planted then return end
 
         local vsrc = ply:GetShootPos()
@@ -71,25 +71,28 @@ function SWEP:BombDrop()
         local vthrow = vvel + vang * 200
 
         local bomb = ents.Create("ttt_c4")
+
         if IsValid(bomb) then
             bomb:SetPos(vsrc + vang * 10)
             bomb:SetOwner(ply)
             bomb:SetThrower(ply)
             bomb:Spawn()
-
             bomb:PointAtEntity(ply)
 
             local ang = bomb:GetAngles()
+
             ang:RotateAroundAxis(ang:Up(), 180)
+
             bomb:SetAngles(ang)
-
             bomb.fingerprints = self.fingerprints
-
             bomb:PhysWake()
+
             local phys = bomb:GetPhysicsObject()
+
             if IsValid(phys) then
                 phys:SetVelocity(vthrow)
             end
+
             self:Remove()
 
             self.Planted = true
@@ -106,6 +109,7 @@ end
 function SWEP:BombStick()
     if SERVER then
         local ply = self:GetOwner()
+
         if not IsValid(ply) then return end
 
         if self.Planted then return end
@@ -117,6 +121,7 @@ function SWEP:BombStick()
 
         if tr.HitWorld then
             local bomb = ents.Create("ttt_c4")
+
             if IsValid(bomb) then
                 bomb:PointAtEntity(ply)
 
@@ -136,6 +141,7 @@ function SWEP:BombStick()
                     bomb.fingerprints = self.fingerprints
 
                     local phys = bomb:GetPhysicsObject()
+
                     if IsValid(phys) then
                         phys:EnableMotion(false)
                     end
