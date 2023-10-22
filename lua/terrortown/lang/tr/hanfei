@@ -1,19 +1,16 @@
--- Using ChatGPT-4 for translation may result in inaccuracies, please visit this link to make changes: https://github.com/sbzlzh/ttt2-role_hanfei, or contact Steam: https://steamcommunity.com/profiles/76561198444795757/
--- This character does not attack things, people, or objects. Please do not get involved.
+local L =LANG.GetLanguageTableReference (" tr ")
 
-local L = LANG.GetLanguageTableReference("en")
+-- GENEL ROL DİLİ DİZELERİ
+L[HANFEI.name] = "Orta Doğulu Haydut"
+L[" INFO_POPUP_ " .. HANFEI.name] = [[Sen Orta Doğulu bir Haydutsun!Tereddüt etme, sadece yap!]]
+L[" body_found_ " .. HANFEI.abbr] = "Orta Doğulu Haydut!"
+L[" SEARCH_ROL_ " .. HANFEI.abbr] = "Bu kişi Orta Doğulu Haydut!"
+L[" target_ " .. L[HANFEI.name] = "Orta Doğulu Haydut"
+L[" ttt2_desc_ " .. HANFEI.name] = [[Bu güçlü bir hain! Oyuna bir C4, yüksek zırh ve bir AK ile başlar. Ölürken bir Allahu Ekber ses efektini tetikler ve patlayarak alan hasarına neden olur!]]
 
--- GENERAL ROLE LANGUAGE STRINGS
-L[HANFEI.name] = "Middle Eastern Bandit"
-L["info_popup_" .. HANFEI.name] = [[You are the Middle Eastern Bandit!Don't hesitate, just do it!]]
-L["body_found_" .. HANFEI.abbr] = "This is the Middle Eastern Bandit!"
-L["search_role_" .. HANFEI.abbr] = "This person is the Middle Eastern Bandit!"
-L["target_" .. HANFEI.name] = "Middle Eastern Bandit"
-L["ttt2_desc_" .. HANFEI.name] = [[This is a powerful traitor! He starts the game with a C4, high armor, and an AK. Upon death, he triggers an Allahu Akbar sound effect and explodes, causing area damage!]]
-
-L["label_hanfei_armor"] = "Armor Amount (Range: 0-500. Default: 50)"
-L["label_hanfei_hp"] = "Health Points Amount (Range: 0-500. Default: 150)"
-L["label_hanfei_exposetime"] = "Exposure Time (Range: 0-120. Default: 60 seconds)"
-L["label_hanfei_tracker_mode"] = "Select Effect Mode (0: None 1: Radar 2: Tracker)"
-L["ttt2_hanfei_chat_reveal"] = "{playername} is the Middle Eastern Bandit this round, let's all take him down together!"
-L["ttt2_hanfei_chat_explode_info"] = "There was a loud explosion! Middle Eastern Bandit: {playername}"
+L[" label_hanfei_armor "] = "Zırh Miktarı (Aralık: 0 -500. Varsayılan: 50)
+L[" label_hanfei_hp "] = "Sağlık Puanı Miktarı (Aralık: 0 -500. Varsayılan: 150)"
+L[" label_hanfei_exposetime "] = "Maruz Kalma Süresi (Aralık: 0 -120. Varsayılan: 60 saniye)"
+L[" label_hanfei_tracker_mode "] = "Efekt Modunu Seç (0: Yok 1: Radar 2: İzleyici)"
+L[" ttt2_hanfei_chat_ reveal "] = "{ playername} bu turda Orta Doğu Haydutu, hadi hep birlikte onu yenelim!"
+L[" ttt2_hanfei_chat_explode_info "] = "Gürültülü bir patlama oldu! Orta Doğulu Haydut: {playername}"
