@@ -1,7 +1,7 @@
 if SERVER then
     AddCSLuaFile()
 
-    AddCSLuaFile("autorun/ak47_sound.lua")
+    resource.AddFile("materials/vgui/ttt/ak47_icon.vmt")
 end
 
 if CLIENT then
@@ -38,7 +38,7 @@ SWEP.Primary.Cone        = 0.02
 SWEP.Primary.Damage      = 25
 SWEP.Primary.Automatic   = true
 SWEP.Primary.ClipSize    = 35
-SWEP.Primary.ClipMax     = 70
+SWEP.Primary.ClipMax     = 90
 SWEP.Primary.DefaultClip = 35
 
 -- enter iron sight info and bone mod info below

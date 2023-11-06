@@ -2,6 +2,8 @@ if SERVER then
     AddCSLuaFile()
 
     resource.AddFile("materials/vgui/ttt/dynamic/roles/icon_hanf.vmt")
+    resource.AddFile("sound/weapons/hanfei/big_explosion.wav")
+    resource.AddFile("sound/weapons/hanfei/jihad.wav")
 end
 
 function ROLE:PreInitialize()
@@ -160,7 +162,7 @@ if SERVER then
                 ply:RemoveEquipmentWeapon("weapon_ttt_hanf_c4")
             end
 
-            ply:RemoveAmmo(60, "SMG1")
+            ply:RemoveAmmo(30, "SMG1")
 
             -- If player has kraber, remove kraber
             --[[if ply:HasWeapon("weapon_ttt_kraber") then
@@ -180,28 +182,34 @@ if SERVER then
         end
     end
 
-    local function HanFeiForAlivePlayers(soundPath, volume, pitch)
-        for _, ply in pairs(player.GetAll()) do
-            if IsValid(ply) and ply:Alive() then
-                ply:EmitSound(soundPath, volume, math.random(pitch[1], pitch[2]))
-            end
-        end
-    end
-
     hook.Add("PlayerDeath", "ttt2_hanfei_death", function(victim, inflictor, attacker)
         if IsValid(victim) and victim:IsPlayer() and victim:GetSubRole() == ROLE_HANFEI then
             local pos = victim:GetPos()
+            local hanfei_player = ""
+
+            for k, v in ipairs(player.GetAll()) do
+                if v:GetSubRole() == ROLE_HANFEI then
+                    hanfei_player = hanfei_player .. v:Nick() .. ", "
+                end
+            end
+
+            -- remove the last comma and space
+            hanfei_player = string.sub(hanfei_player, 1, -3)
+
+            -- Send the message three times
+            for i = 1, 3 do
+                local info = LANG.MsgAll("ttt2_hanfei_chat_explode_info", { playername = hanfei_player }, MSG_CHAT_WARN)
+            end
 
             timer.Simple(2.05, function()
                 hanfei_explode(victim, pos)
             end)
 
-            local info = LANG.MsgAll("ttt2_hanfei_chat_explode_info", { playername = victim:Nick() }, MSG_CHAT_WARN)
+            for k, v in ipairs(player.GetAll()) do
+                if not v:Alive() then return end
+                if v:IsSpec() then return end
 
-            HanFeiForAlivePlayers("weapons/hanfei/jihad.wav", 100, { 95, 105 })
-
-            if IsValid(victim) then
-                victim:EmitSound("weapons/hanfei/jihad.wav", 100, math.random(95, 105))
+                victim:EmitSound("weapons/hanfei/jihad.wav", math.random(100, 150), math.random(95, 105))
             end
         end
     end)

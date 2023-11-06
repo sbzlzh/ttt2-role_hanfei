@@ -1,3 +1,5 @@
+AddCSLuaFile()
+
 local soundData = {
     name       = "gunshot_irq_ak47",
     channel    = CHAN_WEAPON,
