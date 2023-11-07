@@ -3,7 +3,6 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=2862440433
 
 # Hanfei - A new Role for TTT2
 You are a powerful the Middle East Bandit.Hunt to your heart's content.
-
 The Middle East Bandit is a traitor without a shop,but he carries an AK , C4 and has high HP and armor.If the Middle East Bandit is killed, it will cause a certain range of self explosion damage.
 
 ## Convars
