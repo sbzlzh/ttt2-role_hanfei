@@ -18,7 +18,7 @@ end)
 if CLIENT then
     -- Use string or string.format("%.f",<steamid64>)
     -- addon dev emblem in scoreboard
-    hook.Add("TTT2FinishedLoading", "TTT2RegisterhanfeiAddonDev", function()
+    hook.Add("TTT2FinishedLoading", "TTT2RegisterHanfeiAddonDev", function()
         AddTTT2AddonDev("76561197990533517")
         AddTTT2AddonDev("76561199046379906")
         AddTTT2AddonDev("76561198444795757")
