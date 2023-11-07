@@ -1,4 +1,3 @@
--- ChatGPT-4を使用した翻訳では、正確性に欠ける場合があります。変更を加えるには、次のリンクにアクセスしてください: https://github.com/sbzlzh/ttt2-role_hanfei または、Steamに連絡してください: https://steamcommunity.com/profiles/76561198444795757/
 -- このキャラクターは事柄、人、物に対して攻撃を行っていません。どうか巻き込まないでください。
 
 local L = LANG.GetLanguageTableReference("ja")
@@ -15,5 +14,7 @@ L["label_hanfei_armor"] = "防具の量（範囲：0-500。デフォルト：50�
 L["label_hanfei_hp"] = "HPの量（範囲：0-500。デフォルト：150）"
 L["label_hanfei_exposetime"] = "露出時間（範囲：0-120。デフォルト：60秒）"
 L["label_hanfei_tracker_mode"] = "効果モードを選択（0：なし 1：レーダー 2：トラッカー）"
-L["ttt2_hanfei_chat_reveal"] = "{playername}はこのラウンドの中東のならず者です。みんなで倒しましょう！"
+L["ttt2_hanfei_chat_reveal"] = "{playername} はこのラウンドの中東のならず者です。みんなで倒しましょう！"
 L["ttt2_hanfei_chat_explode_info"] = "大きな音がしました！ 中東のならず者：{playername}"
+
+L["tracker_not_available"] = "この装備はサーバーに存在しないため、中東のならず者はトラッカーを与えることができません。この装備が存在しない場合、キャラクターの必要アイテムからダウンロードする必要があります。"

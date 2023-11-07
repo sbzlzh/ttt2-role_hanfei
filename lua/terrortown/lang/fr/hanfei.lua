@@ -1,4 +1,3 @@
--- L'utilisation de ChatGPT-4 pour la traduction peut entraîner des imprécisions ; veuillez visiter ce lien pour apporter des modifications : https://github.com/sbzlzh/ttt2-role_hanfei, ou contactez Steam : https://steamcommunity.com/profiles/76561198444795757/
 -- Ce personnage n'attaque ni les choses, ni les personnes, ni les objets, veuillez ne pas vous impliquer.
 
 local L = LANG.GetLanguageTableReference("fr")
@@ -17,3 +16,5 @@ L["label_hanfei_exposetime"] = "Temps d'exposition (Plage: 0-120. Par défaut: 6
 L["label_hanfei_tracker_mode"] = "Sélectionner le mode d'effet (0: Aucun 1: Radar 2: Traqueur)"
 L["ttt2_hanfei_chat_reveal"] = "{playername} est le Bandit du Moyen-Orient dans cette manche, abattons-le tous ensemble!"
 L["ttt2_hanfei_chat_explode_info"] = "There was a loud explosion! Bandit du Moyen-Orient: {playername}"
+
+--L["tracker_not_available"] = "Middle Eastern Bandit can't be given tracker as this equipment is not available on the server.If it doesn't exist, go to Required Items in your character to download it."

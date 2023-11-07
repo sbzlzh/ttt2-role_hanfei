@@ -1,4 +1,3 @@
--- Использование ChatGPT-4 для перевода может привести к неточностям; пожалуйста, посетите эту ссылку, чтобы внести изменения: https://github.com/sbzlzh/ttt2-role_hanfei, или свяжитесь со Steam: https://steamcommunity.com/profiles/76561198444795757/
 -- Этот персонаж не атакует ни дела, ни людей, ни вещи, пожалуйста, не вовлекайтесь в это.
 
 local L = LANG.GetLanguageTableReference("ru")
@@ -17,3 +16,5 @@ L["label_hanfei_exposetime"] = "Время экспозиции (Диапазо�
 L["label_hanfei_tracker_mode"] = "Выберите режим эффекта (0: Нет 1: Радар 2: Трекер)"
 L["ttt2_hanfei_chat_reveal"] = "{playername} является Бандитом Ближнего Востока в этом раунде, давайте сбросим его вместе!"
 L["ttt2_hanfei_chat_explode_info"] = "There was a loud explosion! Бандит Ближнего Востока: {playername}"
+
+--L["tracker_not_available"] = "Middle Eastern Bandit can't be given tracker as this equipment is not available on the server.If it doesn't exist, go to Required Items in your character to download it."

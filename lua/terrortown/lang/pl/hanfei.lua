@@ -1,4 +1,3 @@
--- Użycie ChatGPT-4 do tłumaczenia może prowadzić do nieścisłości; odwiedź ten link, aby wprowadzić zmiany: https://github.com/sbzlzh/ttt2-role_hanfei, lub skontaktuj się ze Steam: https://steamcommunity.com/profiles/76561198444795757/
 -- Ta postać nie atakuje ani spraw, ani ludzi, ani rzeczy, proszę się w to nie angażować.
 
 local L = LANG.GetLanguageTableReference("pl")
@@ -17,3 +16,5 @@ L["label_hanfei_exposetime"] = "Czas ekspozycji (Zakres: 0-120. Domyślnie: 60 s
 L["label_hanfei_tracker_mode"] = "Wybierz tryb efektu (0: Brak 1: Radar 2: Tracker)"
 L["ttt2_hanfei_chat_reveal"] = "{playername} jest Bandziorem z Bliskiego Wschodu w tej rundzie, zdejmijmy go wszyscy razem!"
 L["ttt2_hanfei_chat_explode_info"] = "There was a loud explosion! Bandzior z Bliskiego Wschodu: {playername}"
+
+--L["tracker_not_available"] = "Middle Eastern Bandit can't be given tracker as this equipment is not available on the server.If it doesn't exist, go to Required Items in your character to download it."

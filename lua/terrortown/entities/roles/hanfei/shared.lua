@@ -136,7 +136,11 @@ if SERVER then
         if GetConVar("ttt2_hanfei_tracker_mode"):GetInt() == TRACKER_MODE.RADAR then
             ply:GiveEquipmentItem("item_ttt_radar")
         elseif GetConVar("ttt2_hanfei_tracker_mode"):GetInt() == TRACKER_MODE.TRACKER then
-            ply:GiveEquipmentItem("item_ttt_tracker")
+            if ply:HasEquipmentItem("item_ttt_tracker") then
+                ply:GiveEquipmentItem("item_ttt_tracker")
+            else
+                LANG.MsgAll("tracker_not_available", nil, MSG_CHAT_WARN)
+            end
         end
 
         -- Give the player kraber equipment

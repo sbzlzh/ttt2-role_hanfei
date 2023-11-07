@@ -1,4 +1,3 @@
--- 使用chatgpt-4翻譯，可能會翻譯不正確，請到此鏈接更改：https://github.com/sbzlzh/ttt2-role_hanfei ，或聯繫steam：https://steamcommunity.com/profiles/76561198444795757/
 -- 該角色並沒有什麼事、人、物進行任何攻擊，請不要帶入其中
 
 local L = LANG.GetLanguageTableReference("zh_tw")
@@ -17,3 +16,5 @@ L["label_hanfei_exposetime"] = "暴露的時間（範圍：0-120。預設值：6
 L["label_hanfei_tracker_mode"] = "選擇效果模式（0：無 1：雷達 2：追踪器）"
 L["ttt2_hanfei_chat_reveal"] = "{playername} 是本局悍匪，大家一起幹翻他！"
 L["ttt2_hanfei_chat_explode_info"] = "發出了一聲巨大的爆炸聲！中東悍匪：{playername}"
+
+L["tracker_not_available"] = "中東悍匪無法給予追蹤器，因為伺服器上並沒有此裝備。 如該裝備不存在，則需前往角色中的必需物品下載即可。"
