@@ -3,8 +3,8 @@ AddCSLuaFile()
 SWEP.HoldType = "slam"
 
 if CLIENT then
-    SWEP.PrintName     = "Hanf-C4"
-    SWEP.Slot          = 6
+    SWEP.PrintName = "Hanf-C4"
+    SWEP.Slot = 6
 
     SWEP.ViewModelFlip = false
     SWEP.ViewModelFOV  = 54
@@ -16,35 +16,35 @@ if CLIENT then
         desc = "C4 for Hanf"
     }
 
-    SWEP.Icon          = "vgui/ttt/icon_c4"
-    SWEP.IconLetter    = "I"
+    SWEP.Icon = "vgui/ttt/icon_c4"
+    SWEP.IconLetter = "I"
 end
 
-SWEP.Base                  = "weapon_tttbase"
+SWEP.Base = "weapon_tttbase"
 
-SWEP.Kind                  = WEAPON_EQUIP
-SWEP.CanBuy                = { nil }
-SWEP.WeaponID              = AMMO_C4
+SWEP.Kind = WEAPON_EQUIP
+SWEP.CanBuy = { nil }
+SWEP.WeaponID = AMMO_C4
 
-SWEP.UseHands              = true
-SWEP.ViewModel             = Model("models/weapons/cstrike/c_c4.mdl")
-SWEP.WorldModel            = Model("models/weapons/w_c4.mdl")
+SWEP.UseHands = true
+SWEP.ViewModel = Model("models/weapons/cstrike/c_c4.mdl")
+SWEP.WorldModel = Model("models/weapons/w_c4.mdl")
 
-SWEP.Primary.ClipSize      = -1
-SWEP.Primary.DefaultClip   = -1
-SWEP.Primary.Automatic     = true
-SWEP.Primary.Ammo          = "none"
-SWEP.Primary.Delay         = 5.0
+SWEP.Primary.ClipSize = -1
+SWEP.Primary.DefaultClip = -1
+SWEP.Primary.Automatic = true
+SWEP.Primary.Ammo = "none"
+SWEP.Primary.Delay = 5.0
 
-SWEP.Secondary.ClipSize    = -1
+SWEP.Secondary.ClipSize = -1
 SWEP.Secondary.DefaultClip = -1
-SWEP.Secondary.Automatic   = true
-SWEP.Secondary.Ammo        = "none"
-SWEP.Secondary.Delay       = 1.0
+SWEP.Secondary.Automatic = true
+SWEP.Secondary.Ammo = "none"
+SWEP.Secondary.Delay = 1.0
 
-SWEP.NoSights              = true
+SWEP.NoSights = true
 
-local throwsound           = Sound("Weapon_SLAM.SatchelThrow")
+local throwsound = Sound("Weapon_SLAM.SatchelThrow")
 
 function SWEP:PrimaryAttack()
     self:SetNextPrimaryFire(CurTime() + self.Primary.Delay)

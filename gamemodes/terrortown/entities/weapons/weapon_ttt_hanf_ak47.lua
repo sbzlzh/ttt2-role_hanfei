@@ -18,63 +18,63 @@ if CLIENT then
     }
 end
 
-SWEP.Gun                 = ("weapon_ttt_hanf_ak47")
+SWEP.Gun = ("weapon_ttt_hanf_ak47")
 
-SWEP.HoldType            = "ar2"
+SWEP.HoldType = "ar2"
 
-SWEP.ViewModel           = "models/weapons/v_irq_ak47.mdl" -- Weapon view model
-SWEP.WorldModel          = "models/weapons/w_irq_ak47.mdl" -- Weapon world model
-SWEP.ShowWorldModel      = false
-SWEP.Base                = "weapon_tttbase"
-SWEP.Spawnable           = true
-SWEP.AdminSpawnable      = true
+SWEP.ViewModel = "models/weapons/v_irq_ak47.mdl" -- Weapon view model
+SWEP.WorldModel = "models/weapons/w_irq_ak47.mdl" -- Weapon world model
+SWEP.ShowWorldModel = false
+SWEP.Base = "weapon_tttbase"
+SWEP.Spawnable = true
+SWEP.AdminSpawnable  = true
 
-SWEP.Primary.Sound       = Sound("gunshot_irq_ak47") -- Script that calls the primary fire sound
---SWEP.Primary.SilencedSound 	= Sound("")		-- Sound if the weapon is silenced
-SWEP.Primary.Ammo        = "SMG1"
-SWEP.Primary.Delay       = 0.095
-SWEP.Primary.Recoil      = 1.2
-SWEP.Primary.Cone        = 0.02
-SWEP.Primary.Damage      = 25
-SWEP.Primary.Automatic   = true
-SWEP.Primary.ClipSize    = 35
-SWEP.Primary.ClipMax     = 90
+SWEP.Primary.Sound = Sound("gunshot_irq_ak47") -- Script that calls the primary fire sound
+--SWEP.Primary.SilencedSound = Sound("") -- Sound if the weapon is silenced
+SWEP.Primary.Ammo = "SMG1"
+SWEP.Primary.Delay = 0.095
+SWEP.Primary.Recoil = 1.2
+SWEP.Primary.Cone = 0.02
+SWEP.Primary.Damage = 25
+SWEP.Primary.Automatic = true
+SWEP.Primary.ClipSize = 35
+SWEP.Primary.ClipMax = 90
 SWEP.Primary.DefaultClip = 35
 
 -- enter iron sight info and bone mod info below
-SWEP.IronSightsPos       = Vector(-6.56, -11, 2.4)
-SWEP.IronSightsAng       = Vector(2.4, 0, 0)
-SWEP.SightsPos           = Vector(-1.976, 0, 0.699)
-SWEP.SightsAng           = Vector(0.129, 0, 0)
-SWEP.RunSightsPos        = Vector(5.26, -6.123, -0.514)
-SWEP.RunSightsAng        = Vector(-19.5, 63.31, -19.584)
+SWEP.IronSightsPos = Vector(-1.976, 0, 0.699) -- Iron Sight positions and angles. Use the Iron sights utility in
+SWEP.IronSightsAng = Vector(0.129, 0, 0) -- Clavus's Swep Construction Kit to get these vectors
+SWEP.SightsPos = Vector(-1.976, 0, 0.699)
+SWEP.SightsAng = Vector(0.129, 0, 0)
+SWEP.RunSightsPos = Vector(5.26, -6.123, -0.514) -- These are for the angles your viewmodel will be when running
+SWEP.RunSightsAng = Vector(-19.5, 63.31, -19.584)
 
 -- Kind specifies the category this weapon is in. Players can only carry one of
 -- each. Can be: WEAPON_... MELEE, PISTOL, HEAVY, NADE, CARRY, EQUIP1, EQUIP2 or ROLE.
 -- Matching SWEP.Slot values: 0      1       2     3      4      6       7        8
-SWEP.Kind                = WEAPON_EQUIP1
+SWEP.Kind = WEAPON_EQUIP1
 
 -- If AutoSpawnable is true and SWEP.Kind is not WEAPON_EQUIP1/2,
 -- then this gun can be spawned as a random weapon.
-SWEP.AutoSpawnable       = false
+SWEP.AutoSpawnable = false
 
 -- The AmmoEnt is the ammo entity that can be picked up when carrying this gun.
-SWEP.AmmoEnt             = "item_ammo_smg1_ttt"
+SWEP.AmmoEnt = "item_ammo_smg1_ttt"
 
 -- If LimitedStock is true, you can only buy one per round.
-SWEP.LimitedStock        = true
+SWEP.LimitedStock = true
 
 -- CanBuy is a table of ROLE_* entries like ROLE_TRAITOR and ROLE_DETECTIVE. If
 -- a role is in this table, those players can buy this.
-SWEP.CanBuy              = { nil }
+SWEP.CanBuy = { nil }
 
 -- If IsSilent is true, victims will not scream upon death.
-SWEP.IsSilent            = false
+SWEP.IsSilent = false
 
 -- If NoSights is true, the weapon won't have ironsights
-SWEP.NoSights            = false
+SWEP.NoSights  = false
 
-SWEP.WElements           = {
+SWEP.WElements = {
     ["ak_47"] = {
         type = "Model",
         model = "models/weapons/w_irq_ak47.mdl",
@@ -102,9 +102,7 @@ SWEP.Offset = {
         Up = 0,
         Right = 355,
         Forward = 180,
-    },
-
-    Scale = 1
+    }
 }
 
 function SWEP:Reload()

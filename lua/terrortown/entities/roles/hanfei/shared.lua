@@ -2,8 +2,8 @@ if SERVER then
     AddCSLuaFile()
 
     resource.AddFile("materials/vgui/ttt/dynamic/roles/icon_hanf.vmt")
-    resource.AddFile("sound/weapons/hanfei/big_explosion.wav")
-    resource.AddFile("sound/weapons/hanfei/jihad.wav")
+    resource.AddFile("sound/hanfei/big_explosion.wav")
+    resource.AddFile("sound/hanfei/jihad.wav")
 end
 
 function ROLE:PreInitialize()
@@ -45,8 +45,8 @@ local function hanfei_explode(ply, pos)
     if not IsValid(ply) then return end
 
     local DMG_EXPLOSION = 350
-    local R_INNER = 520
-    local R_OUTER = R_INNER * 1.15
+    local R_INNER = 340
+    local R_OUTER = R_INNER * 1.4
 
     -- Create and set explosion effect data
     local effect = EffectData()
@@ -57,13 +57,15 @@ local function hanfei_explode(ply, pos)
     effect:SetRadius(R_OUTER)
     effect:SetMagnitude(DMG_EXPLOSION)
 
+    -- ply:EmitSound("hanfei/big_explosion.wav", 400, math.random(100, 125))
+
     -- Generate explosion effect at the specified position
     util.Effect("Explosion", effect, true, true)
 
     -- Check all entities within the range
     local entities = ents.FindInSphere(pos, R_OUTER)
 
-    for _, ent in ipairs(entities) do
+    for k, ent in ipairs(entities) do
         -- If the entity is a player and not on the same team as the player who triggered the explosion
         if IsValid(ent) and ent:IsPlayer() and ent:GetTeam() ~= ply:GetTeam() then
             -- Calculate distance and damage
@@ -209,11 +211,13 @@ if SERVER then
                 hanfei_explode(victim, pos)
             end)
 
+            -- victim:EmitSound("hanfei/jihad.wav", math.random(100, 150), math.random(95, 105))
+
             for k, v in ipairs(player.GetAll()) do
                 if not v:Alive() then return end
                 if v:IsSpec() then return end
 
-                victim:EmitSound("weapons/hanfei/jihad.wav", math.random(100, 150), math.random(95, 105))
+                v:EmitSound("hanfei/jihad.wav", math.random(100, 150), math.random(95, 105))
             end
         end
     end)
