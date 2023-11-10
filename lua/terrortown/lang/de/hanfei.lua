@@ -17,4 +17,4 @@ L["label_hanfei_tracker_mode"] = "Effektmodus auswählen (0: Kein 1: Radar 2: Tr
 L["ttt2_hanfei_chat_reveal"] = "{playername} ist der Nahost-Bandit in dieser Runde, lasst uns ihn gemeinsam besiegen!"
 L["ttt2_hanfei_chat_explode_info"] = "There was a loud explosion! Nahost-Bandit: {playername}"
 
---L["tracker_not_available"] = "Middle Eastern Bandit can't be given tracker as this equipment is not available on the server.If it doesn't exist, go to Required Items in your character to download it."
+L["tracker_not_available"] = "Nahöstlichen Banditen kann kein Tracker gegeben werden, da diese Ausrüstung auf dem Server nicht verfügbar ist. Wenn es nicht existiert, gehen Sie zu Benötigte Gegenstände in Ihrem Charakter, um es herunterzuladen."

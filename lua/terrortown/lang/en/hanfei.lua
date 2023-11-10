@@ -8,7 +8,7 @@ L["info_popup_" .. HANFEI.name] = [[You are the Middle Eastern Bandit!Don't hesi
 L["body_found_" .. HANFEI.abbr] = "This is the Middle Eastern Bandit!"
 L["search_role_" .. HANFEI.abbr] = "This person is the Middle Eastern Bandit!"
 L["target_" .. HANFEI.name] = "Middle Eastern Bandit"
-L["ttt2_desc_" .. HANFEI.name] = [[This is a powerful traitor! He starts the game with a C4, high armor, and an AK. Upon death, he triggers an Allahu Akbar sound effect and explodes, causing area damage!]]
+L["ttt2_desc_" .. HANFEI.name] = [[This is a powerful traitor! He starts the game with a C4, high armor, and an AK. Up on death, he triggers an Allahu Akbar sound effect and explodes, causing area damage!]]
 
 L["label_hanfei_armor"] = "Armor Amount (Range: 0-500. Default: 50)"
 L["label_hanfei_hp"] = "Health Points Amount (Range: 0-500. Default: 150)"

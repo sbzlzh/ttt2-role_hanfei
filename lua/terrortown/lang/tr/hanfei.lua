@@ -17,4 +17,4 @@ L["label_hanfei_tracker_mode"] = "Efekt Modunu Seç (0: Yok 1: Radar 2: İzleyic
 L["ttt2_hanfei_chat_reveal"] = "{playername} bu turda Orta Doğu Haydutu, hadi hep birlikte onu yenelim!"
 L["ttt2_hanfei_chat_explode_info"] = "Gürültülü bir patlama oldu! Orta Doğulu Haydut: {playername}"
 
---L["tracker_not_available"] = "Middle Eastern Bandit can't be given tracker as this equipment is not available on the server.If it doesn't exist, go to Required Items in your character to download it."
+L["tracker_not_available"] = "Ortadoğulu Haydut'a izleyici verilemez çünkü bu ekipman sunucuda mevcut değildir. Eğer mevcut değilse, indirmek için karakterinizdeki Gerekli Eşyalar'a gidin."
