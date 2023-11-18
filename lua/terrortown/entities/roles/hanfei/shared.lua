@@ -29,10 +29,10 @@ function ROLE:PreInitialize()
         random = 30,
         traitorButton = 1,
         togglable = true,
-        credits = 2,
-        creditsAwardDeadEnable = 1,
-        creditsAwardKillEnable = 1,
-        shopFallback = nil
+        credits = 0,
+        creditsAwardDeadEnable = 0,
+        creditsAwardKillEnable = 0,
+        shopFallback = SHOP_DISABLED
     }
 end
 
