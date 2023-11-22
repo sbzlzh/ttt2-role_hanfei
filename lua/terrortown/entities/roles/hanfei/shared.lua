@@ -160,8 +160,8 @@ if SERVER then
             -- Removes the player's equipment and weapons
             -- Remove ak47 if the player has one
             --[[if ply:HasWeapon("weapon_ttt_hanf_ak47") then
-				ply:RemoveEquipmentWeapon("weapon_ttt_hanf_ak47")
-			end--]]
+                ply:RemoveEquipmentWeapon("weapon_ttt_hanf_ak47")
+            end--]]
 
             -- If player has C4, remove C4
             if ply:HasWeapon("weapon_ttt_hanf_c4") then
@@ -172,8 +172,8 @@ if SERVER then
 
             -- If player has kraber, remove kraber
             --[[if ply:HasWeapon("weapon_ttt_kraber") then
-				ply:RemoveEquipmentWeapon("weapon_ttt_kraber")
-			end--]]
+                ply:RemoveEquipmentWeapon("weapon_ttt_kraber")
+            end--]]
 
             -- If player has tracker or radar, remove  tracker or radar
             if GetConVar("ttt2_hanfei_tracker_mode"):GetInt() == TRACKER_MODE.RADAR then
