@@ -12,6 +12,7 @@ L["ttt2_desc_" .. HANFEI.name] = [[Bu güçlü bir hain! Oyuna bir C4, yüksek z
 
 L["label_hanfei_armor"] = "Zırh Miktarı (Aralık: 0 -500. Varsayılan: 50)"
 L["label_hanfei_hp"] = "Sağlık Puanı Miktarı (Aralık: 0 -500. Varsayılan: 150)"
+L["label_hanfei_exposetime_enabled"] = "Maruz Kalma Süresini Etkinleştir (0: Devre Dışı Bırak 1: Etkinleştir. Varsayılan: 1)"
 L["label_hanfei_exposetime"] = "Maruz Kalma Süresi (Aralık: 0 -120. Varsayılan: 60 saniye)"
 L["label_hanfei_tracker_mode"] = "Efekt Modunu Seç (0: Yok 1: Radar 2: İzleyici)"
 L["ttt2_hanfei_chat_reveal"] = "{playername} bu turda Orta Doğu Haydutu, hadi hep birlikte onu yenelim!"

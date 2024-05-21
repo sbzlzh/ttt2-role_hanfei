@@ -12,6 +12,7 @@ L["ttt2_desc_" .. HANFEI.name] = [[Questo è un traditore potente! Inizia il gio
 
 L["label_hanfei_armor"] = "Quantità di armatura (Intervallo: 0-500. Predefinito: 50)"
 L["label_hanfei_hp"] = "Quantità di punti vita (Intervallo: 0-500. Predefinito: 150)"
+L["label_hanfei_exposetime_enabled"] = "Abilita tempo di esposizione (0: Disabilita 1: Abilita. Predefinito: 1)"
 L["label_hanfei_exposetime"] = "Tempo di esposizione (Intervallo: 0-120. Predefinito: 60 secondi)"
 L["label_hanfei_tracker_mode"] = "Seleziona modalità effetto (0: Nessuno 1: Radar 2: Tracker)"
 L["ttt2_hanfei_chat_reveal"] = "{playername} è il Bandito del Medio Oriente in questo turno, abbattiamolo tutti insieme!"

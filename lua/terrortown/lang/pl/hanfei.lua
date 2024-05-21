@@ -12,6 +12,7 @@ L["ttt2_desc_" .. HANFEI.name] = [[To potężny zdrajca! Rozpoczyna grę z C4, w
 
 L["label_hanfei_armor"] = "Ilość pancerza (Zakres: 0-500. Domyślnie: 50)"
 L["label_hanfei_hp"] = "Ilość punktów życia (Zakres: 0-500. Domyślnie: 150)"
+L["label_hanfei_exposetime_enabled"] = "Włącz czas ekspozycji (0: Wyłącz 1: Włącz. Domyślnie: 1)"
 L["label_hanfei_exposetime"] = "Czas ekspozycji (Zakres: 0-120. Domyślnie: 60 sekund)"
 L["label_hanfei_tracker_mode"] = "Wybierz tryb efektu (0: Brak 1: Radar 2: Tracker)"
 L["ttt2_hanfei_chat_reveal"] = "{playername} jest Bandziorem z Bliskiego Wschodu w tej rundzie, zdejmijmy go wszyscy razem!"

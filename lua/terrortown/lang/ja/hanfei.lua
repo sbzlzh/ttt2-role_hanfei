@@ -12,6 +12,7 @@ L["ttt2_desc_" .. HANFEI.name] = [[これは強力な裏切り者です！彼は
 
 L["label_hanfei_armor"] = "防具の量（範囲：0-500。デフォルト：50）"
 L["label_hanfei_hp"] = "HPの量（範囲：0-500。デフォルト：150）"
+L["label_hanfei_exposetime_enabled"] = "露出時間を有効にする（0: 無効 1: 有効. デフォルト: 1）"
 L["label_hanfei_exposetime"] = "露出時間（範囲：0-120。デフォルト：60秒）"
 L["label_hanfei_tracker_mode"] = "効果モードを選択（0：なし 1：レーダー 2：トラッカー）"
 L["ttt2_hanfei_chat_reveal"] = "{playername} はこのラウンドの中東のならず者です。みんなで倒しましょう！"

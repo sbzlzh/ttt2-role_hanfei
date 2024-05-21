@@ -12,6 +12,7 @@ L["ttt2_desc_" .. HANFEI.name] = [[Det här är en mäktig förrädare! Han bör
 
 L["label_hanfei_armor"] = "Pansarbelopp (intervall: 0-500. Standard: 50)"
 L["label_hanfei_hp"] = "Antal hälsopoäng (intervall: 0-500. Standard: 150)"
+L["label_hanfei_exposetime_enabled"] = "Aktivera exponeringstid (0: Inaktivera 1: Aktivera. Standard: 1)"
 L["label_hanfei_exposetime"] = "Exponeringstid (intervall: 0-120. Standard: 60 sekunder)"
 L["label_hanfei_tracker_mode"] = "Välj effektläge (0: Ingen 1: Radar 2: Tracker)"
 L["ttt2_hanfei_chat_reveal"] = "{playername} är Mellanösterns bandit denna omgång, låt oss alla ta ner honom tillsammans!"

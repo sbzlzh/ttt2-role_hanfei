@@ -86,32 +86,35 @@ end
 if SERVER then
     -- Set the exposure time for the hanfei role at the start of each round
     hook.Add("TTTBeginRound", "ttt2_hanfei_timer", function()
-        -- Get the exposure time from ConVar
-        timer.Simple(GetConVar("ttt2_hanfei_exposetime"):GetInt(), function()
-            local flag = false
-            local hanfei_players = ""
+        -- Check if the feature is enabled
+        if GetConVar("ttt2_hanfei_exposetime_enabled"):GetInt() == 1 then
+            -- Get the exposure time from ConVar
+            timer.Simple(GetConVar("ttt2_hanfei_exposetime"):GetInt(), function()
+                local flag = false
+                local hanfei_players = ""
 
-            -- Check if there is a Hanfei ROLE in the game
-            for k, v in ipairs(player.GetAll()) do
-                if v:GetSubRole() == ROLE_HANFEI and v:Alive() then
-                    flag = true
-                    v.expose = true
-                    -- Used to customize the role model, when automatically exposed will become the set model, if not set is the default model
-                    -- v:SetModel("models/cso2/pm/hasanpm.mdl")
-                    hanfei_players = hanfei_players .. v:Nick() .. ", "
+                -- Check if there is a Hanfei ROLE in the game
+                for k, v in ipairs(player.GetAll()) do
+                    if v:GetSubRole() == ROLE_HANFEI and v:Alive() then
+                        flag = true
+                        v.expose = true
+                        -- Used to customize the role model, when automatically exposed will become the set model, if not set is the default model
+                        -- v:SetModel("models/cso2/pm/hasanpm.mdl")
+                        hanfei_players = hanfei_players .. v:Nick() .. ", "
+                    end
                 end
-            end
 
-            -- If there is a Hanfei ROLE, notify all players
-            if flag then
-                hanfei_players = string.sub(hanfei_players, 1, -3) -- remove the last comma and space
+                -- If there is a Hanfei ROLE, notify all players
+                if flag then
+                    hanfei_players = string.sub(hanfei_players, 1, -3) -- remove the last comma and space
 
-                -- Send the message three times
-                for i = 1, 3 do
-                    local info = LANG.MsgAll("ttt2_hanfei_chat_reveal", { playername = hanfei_players }, MSG_CHAT_WARN)
+                    -- Send the message three times
+                    for i = 1, 3 do
+                        local info = LANG.MsgAll("ttt2_hanfei_chat_reveal", { playername = hanfei_players }, MSG_CHAT_WARN)
+                    end
                 end
-            end
-        end)
+            end)
+        end
     end)
 
     -- CONSTANTS
@@ -240,6 +243,14 @@ if CLIENT then
             label = "label_hanfei_armor",
             min = 0,
             max = 500,
+            decimal = 0
+        })
+
+        form:MakeSlider({
+            serverConvar = "ttt2_hanfei_exposetime_enabled",
+            label = "label_hanfei_exposetime_enabled",
+            min = 0,
+            max = 1,
             decimal = 0
         })
 

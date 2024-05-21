@@ -12,8 +12,9 @@ L["ttt2_desc_" .. HANFEI.name] = [[This is a powerful traitor! He starts the gam
 
 L["label_hanfei_armor"] = "Armor Amount (Range: 0-500. Default: 50)"
 L["label_hanfei_hp"] = "Health Points Amount (Range: 0-500. Default: 150)"
-L["label_hanfei_exposetime"] = "Exposure Time (Range: 0-120. Default: 60 seconds)"
-L["label_hanfei_tracker_mode"] = "Select Effect Mode (0: None 1: Radar 2: Tracker)"
+L["label_hanfei_exposetime_enabled"] = "Enable Exposure Time(0:Disable 1:Enabled. Default:1)"
+L["label_hanfei_exposetime"] = "Exposure Time (Range: 0-120. Default: 60 Seconds)"
+L["label_hanfei_tracker_mode"] = "Select Effect Mode (0:None 1:Radar 2:Tracker)"
 L["ttt2_hanfei_chat_reveal"] = "{playername} is the Middle Eastern Bandit this round, let's all take him down together!"
 L["ttt2_hanfei_chat_explode_info"] = "There was a loud explosion! Middle Eastern Bandit: {playername}"
 
