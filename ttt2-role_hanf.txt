@@ -47,11 +47,11 @@ Convars are variables that are introduced to allow server owners to customize th
 [/code]
 
 [h1]Credits:[/h1]
-[URL=https://steamcommunity.com/profiles/76561197990533517]sogou[/URL]: original proponent of the idea
-[URL=https://steamcommunity.com/profiles/76561198444795757/]波と一緒に漂う[/URL]: Improvements and optimizations to character addon
-[URL=https://steamcommunity.com/id/sbzl9428]愚かなキツネ[/URL]: designer of the workshop/ingame role icon
-[URL=https://steamcommunity.com/id/zaratusa]Zaratusa[/URL]: The creator of the ooh-la-la sound when the character dies
-[URL=https://steamcommunity.com/sharedfiles/filedetails/?id=3077611574]AK47 wepaon[/URL]: designe of the role weapon
+[URL=https://steamcommunity.com/profiles/76561197990533517]sogou[/URL]: Original proponent of the idea
+[URL=https://steamcommunity.com/profiles/76561198444795757/]随波逐流[/URL]: Improvements and optimizations to character addon
+[URL=https://steamcommunity.com/id/sbzl9428]笨比小狐狸[/URL]: Designer of the workshop/ingame role icon
+[URL=https://steamcommunity.com/id/zaratusa]Zaratusa[/URL]: Author of the ooh-la-la sound when a character dies
+[URL=https://steamcommunity.com/sharedfiles/filedetails/?id=3077611574]AK47 wepaon[/URL]: Designe of the role weapon
 --------------------------------------------------------------------------------------------
 [i]你是强大的中东悍匪，尽情猎杀吧。[/i]
 
@@ -103,7 +103,7 @@ Convars 是一种引入的变量，允许服务器所有者在不更改代码的
 
 [h1]学分:[/h1]
 [URL=https://steamcommunity.com/profiles/76561197990533517]sogou[/URL]: 最初始的想法者
-[URL=https://steamcommunity.com/profiles/76561198444795757/]波と一緒に漂う[/URL]: 对角色插件的改进和优化
-[URL=https://steamcommunity.com/id/sbzl9428]愚かなキツネ[/URL]: 车间/游戏角色图标的设计者
-[URL=https://steamcommunity.com/id/zaratusa]Zaratusa[/URL]: 角色死亡时呜啦啦的声音创造者
+[URL=https://steamcommunity.com/profiles/76561198444795757/]随波逐流[/URL]: 对角色插件的改进和优化
+[URL=https://steamcommunity.com/id/sbzl9428]笨比小狐狸[/URL]: 车间/游戏角色图标的设计者
+[URL=https://steamcommunity.com/id/zaratusa]Zaratusa[/URL]: 角色死亡时呜啦啦声音的作者
 [URL=https://steamcommunity.com/sharedfiles/filedetails/?id=3077611574]AK47 武器[/URL]: 角色武器
