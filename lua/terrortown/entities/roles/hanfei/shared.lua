@@ -2,8 +2,6 @@ if SERVER then
     AddCSLuaFile()
 
     resource.AddFile("materials/vgui/ttt/dynamic/roles/icon_hanf.vmt")
-    resource.AddFile("sound/hanfei/big_explosion.wav")
-    resource.AddFile("sound/hanfei/jihad.wav")
 end
 
 function ROLE:PreInitialize()
@@ -41,7 +39,7 @@ function ROLE:Initialize()
 end
 
 -- hanfei_explode function creates an explosion that deals damage within a specified range
-local function hanfei_explode(ply, pos)
+function hanfei_explode(ply, pos)
     if not IsValid(ply) then return end
 
     local DMG_EXPLOSION = 350
@@ -87,7 +85,7 @@ if SERVER then
     -- Set the exposure time for the hanfei role at the start of each round
     hook.Add("TTTBeginRound", "ttt2_hanfei_timer", function()
         -- Check if the feature is enabled
-        if GetConVar("ttt2_hanfei_exposetime_enabled"):GetInt() == 1 then
+        if GetConVar("ttt2_hanfei_exposetime_enabled"):GetBool() then
             -- Get the exposure time from ConVar
             timer.Simple(GetConVar("ttt2_hanfei_exposetime"):GetInt(), function()
                 local flag = false
@@ -99,7 +97,7 @@ if SERVER then
                         flag = true
                         v.expose = true
                         -- Used to customize the role model, when automatically exposed will become the set model, if not set is the default model
-                        -- v:SetModel("models/cso2/pm/hasanpm.mdl")
+                        v:SetModel("models/cso2/pm/hasanpm2.mdl")
                         hanfei_players = hanfei_players .. v:Nick() .. ", "
                     end
                 end
@@ -186,7 +184,6 @@ if SERVER then
             end
 
             -- Remove the player's armor
-            -- Note: there is an error in your original code, it should be "ttt2_hanfei_armor" not "ttt2_hanfei_armor"
             ply:RemoveArmor(GetConVar("ttt2_hanfei_armor"):GetInt())
         end
     end
@@ -213,8 +210,6 @@ if SERVER then
             timer.Simple(2.05, function()
                 hanfei_explode(victim, pos)
             end)
-
-            -- victim:EmitSound("hanfei/jihad.wav", math.random(100, 150), math.random(95, 105))
 
             for k, v in ipairs(player.GetAll()) do
                 if not v:Alive() then return end
