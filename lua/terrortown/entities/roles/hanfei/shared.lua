@@ -191,20 +191,10 @@ if SERVER then
     hook.Add("PlayerDeath", "ttt2_hanfei_death", function(victim, inflictor, attacker)
         if IsValid(victim) and victim:IsPlayer() and victim:GetSubRole() == ROLE_HANFEI then
             local pos = victim:GetPos()
-            local hanfei_player = ""
-
-            for k, v in ipairs(player.GetAll()) do
-                if v:GetSubRole() == ROLE_HANFEI then
-                    hanfei_player = hanfei_player .. v:Nick() .. ", "
-                end
-            end
-
-            -- remove the last comma and space
-            hanfei_player = string.sub(hanfei_player, 1, -3)
 
             -- Send the message three times
             for i = 1, 3 do
-                local info = LANG.MsgAll("ttt2_hanfei_chat_explode_info", { playername = hanfei_player }, MSG_CHAT_WARN)
+                local info = LANG.MsgAll("ttt2_hanfei_chat_explode_info", { playername = victim:Nick() }, MSG_CHAT_WARN)
             end
 
             timer.Simple(2.05, function()
