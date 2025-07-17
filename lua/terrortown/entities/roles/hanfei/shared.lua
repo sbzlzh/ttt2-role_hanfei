@@ -136,12 +136,13 @@ if SERVER then
         ply:GiveAmmo(90, "SMG1")
 
         -- Give the player radar equipment or trackerequipment
-        if GetConVar("ttt2_hanfei_tracker_mode"):GetInt() == TRACKER_MODE.RADAR then
+        if GetConVar("ttt2_hanfei_tracker_mode"):GetInt() == TRACKER_MODE.NONE then
+            -- Do nothing, no tracker or radar
+            return
+        elseif GetConVar("ttt2_hanfei_tracker_mode"):GetInt() == TRACKER_MODE.RADAR then
             ply:GiveEquipmentItem("item_ttt_radar")
         elseif GetConVar("ttt2_hanfei_tracker_mode"):GetInt() == TRACKER_MODE.TRACKER then
-            if ply:HasWeapon("item_ttt_tracker") then
-                ply:GiveEquipmentItem("item_ttt_tracker")
-            else
+            if not ply:GiveEquipmentItem("item_ttt_tracker") then
                 LANG.MsgAll("tracker_not_available", nil, MSG_CHAT_WARN)
             end
         end
